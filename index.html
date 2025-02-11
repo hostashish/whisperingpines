@@ -1,0 +1,1685 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Whispering Pines - Luxury Mountain Resort</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+        .animate-float {
+            animation: float 6s ease-in-out infinite;
+        }
+        @keyframes blob {
+            0% { transform: translate(0px, 0px) scale(1); }
+            33% { transform: translate(30px, -50px) scale(1.1); }
+            66% { transform: translate(-20px, 20px) scale(0.9); }
+            100% { transform: translate(0px, 0px) scale(1); }
+        }
+        .animate-blob {
+            animation: blob 7s infinite;
+        }
+        .animation-delay-2000 {
+            animation-delay: 2s;
+        }
+        .animation-delay-4000 {
+            animation-delay: 4s;
+        }
+        .scrollbar-hide::-webkit-scrollbar {
+            display: none;
+        }
+        .scrollbar-hide {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation Bar -->
+    <nav class="bg-white shadow-lg fixed w-full z-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <div class="text-xl font-semibold text-green-600">
+                        <img src="https://www.whisperingpines.in/images/logo.png" class="h-10 md:h-12 w-auto">
+
+                    </div>
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="text-gray-600 hover:text-green-600 transition-colors duration-300">Home</a>
+                    <a href="accommodation.html" class="text-gray-600 hover:text-green-600 transition-colors duration-300">Accommodation</a>
+                    <a href="dining.html" class="text-gray-600 hover:text-green-600 transition-colors duration-300">Dining</a>
+                    <a href="experiences-page.html" class="text-gray-600 hover:text-green-600 transition-colors duration-300">Experiences</a>
+                    <a href="tariff.html" class="text-gray-600 hover:text-green-600 transition-colors duration-300">Tariff</a>
+                    <a href="packages.html" class="text-gray-600 hover:text-green-600 transition-colors duration-300">Packages</a>
+                    <a href="gallery.html" class="text-gray-600 hover:text-green-600 transition-colors duration-300">Gallery</a>
+                    <a href="testimonials.html" class="text-gray-600 hover:text-green-600 transition-colors duration-300">Testimonials</a>
+                    <a href="faq.html" class="text-gray-600 hover:text-green-600 transition-colors duration-300">FAQs</a>
+                    <a href="contact-us.html" class="bg-green-600 text-white px-6 py-2 rounded-md hover:bg-green-700 transition-all duration-300 transform hover:scale-105">
+                        Book Now
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" type="button" class="text-gray-600 hover:text-green-600 focus:outline-none">
+                        <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Mobile Menu (Drawer) -->
+            <div id="mobile-menu" class="fixed inset-y-0 left-0 w-64 bg-white shadow-lg transform -translate-x-full transition-transform duration-300 ease-in-out z-50">
+                <div class="p-5 flex flex-col h-full">
+                    <!-- Logo and Close Button -->
+                    <div class="flex items-center justify-between mb-4">
+                        <img src="https://www.whisperingpines.in/images/logo.png" class="h-10 w-auto">
+                        <button id="close-menu" class="text-gray-600 hover:text-red-600 focus:outline-none text-xl">
+                            ✖
+                        </button>
+                    </div>
+
+                    <!-- Navigation Links -->
+                    <nav class="mt-5 space-y-4 flex-grow">
+                        <a href="index.html" class="block text-gray-700 hover:text-green-600">Home</a>
+                        <a href="#about" class="block text-gray-700 hover:text-green-600">Accommodation</a>
+                        <a href="#activities" class="block text-gray-700 hover:text-green-600">Dining</a>
+                        <a href="#gallery" class="block text-gray-700 hover:text-green-600">Experiences</a>
+                        <a href="#contact" class="block text-gray-700 hover:text-green-600">Tariff</a>
+                        <a href="#contact" class="block text-gray-700 hover:text-green-600">Packages</a>
+                        <a href="#contact" class="block text-gray-700 hover:text-green-600">Gallery</a>
+                        <a href="#contact" class="block text-gray-700 hover:text-green-600">Testimonials</a>
+                        <a href="#contact" class="block text-gray-700 hover:text-green-600">FAQs</a>
+                        <a href="#contact" class="block text-gray-700 hover:text-green-600">Book Now</a>
+                    </nav>
+
+                    <!-- Action Buttons -->
+                    <div class="space-y-3 mt-auto">
+                        <a href="tel:+919876543210" class="block bg-blue-500 text-white text-center py-2 rounded-md flex items-center justify-center gap-2 hover:bg-blue-600">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10l1.42 1.42a9 9 0 0012.16 0L18 10m0 0l-1.42-1.42a9 9 0 00-12.16 0L3 10m3 4l1 1a5 5 0 007 0l1-1"></path>
+                            </svg>
+                            Call Now
+                        </a>
+
+                        <a href="https://wa.me/919876543210" class="block bg-green-500 text-white text-center py-2 rounded-md flex items-center justify-center gap-2 hover:bg-green-600">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10l1.42 1.42a9 9 0 0012.16 0L18 10m0 0l-1.42-1.42a9 9 0 00-12.16 0L3 10m3 4l1 1a5 5 0 007 0l1-1"></path>
+                            </svg>
+                            WhatsApp
+                        </a>
+
+                        <a href="#book-now" class="block bg-red-500 text-white text-center py-2 rounded-md flex items-center justify-center gap-2 hover:bg-red-600">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6l4 2"></path>
+                            </svg>
+                            Book Now
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative h-screen">
+        <div class="absolute inset-0">
+            <img src="https://www.whisperingpines.in/images/rev/whispering-pines.jpg" 
+                 alt="Mountain landscape" 
+                 class="w-full h-full object-cover"
+                 loading="eager"/>
+            <div class="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-black/50"></div>
+        </div>
+        <div class="relative max-w-7xl mx-auto pt-32 pb-16 px-4 sm:px-6 lg:px-8 flex items-center h-full">
+            <div class="text-center w-full">
+                <h1 class="text-3xl sm:text-4xl md:text-6xl font-bold text-white mb-4 animate-float">
+                    Experience Luxury in the Himalayas
+                </h1>
+                <p class="text-lg sm:text-xl text-white mb-12 max-w-3xl mx-auto">
+                    Discover serenity at Kanatal's premier mountain resort, where every moment becomes an unforgettable memory
+                </p>
+                <div class="bg-white/95 backdrop-blur-sm p-6 rounded-xl shadow-2xl max-w-4xl mx-auto transform hover:scale-[1.02] transition-all duration-300">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                        <div class="w-full">
+                            <label class="block text-gray-700 text-sm font-bold mb-2">Check In</label>
+                            <input type="date" 
+                                   class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-600 focus:border-transparent transition-all duration-300">
+                        </div>
+                        <div class="w-full">
+                            <label class="block text-gray-700 text-sm font-bold mb-2">Check Out</label>
+                            <input type="date" 
+                                   class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-600 focus:border-transparent transition-all duration-300">
+                        </div>
+                        <div class="w-full">
+                            <label class="block text-gray-700 text-sm font-bold mb-2">Guests</label>
+                            <select class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-600 focus:border-transparent transition-all duration-300">
+                                <option>2 Adults</option>
+                                <option>3 Adults</option>
+                                <option>4 Adults</option>
+                                <option>5+ Adults</option>
+                            </select>
+                        </div>
+                        <div class="w-full flex items-end">
+                            <button class="w-full bg-green-600 text-white py-3 rounded-lg hover:bg-green-700 transform hover:scale-105 transition-all duration-300">
+                                Check Availability
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Scroll Indicator -->
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+            </svg>
+        </div>
+    </section>
+
+<!-- About Section -->
+    <section id="about" class="relative py-24 overflow-hidden bg-gradient-to-b from-white to-green-50">
+        <!-- Decorative Background Elements -->
+        <div class="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
+            <div class="absolute top-1/4 left-0 w-64 h-64 bg-green-100 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob"></div>
+            <div class="absolute top-1/3 right-0 w-72 h-72 bg-blue-100 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-2000"></div>
+            <div class="absolute bottom-1/4 left-1/4 w-72 h-72 bg-yellow-100 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-4000"></div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+            <!-- Section Header -->
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-green-600 to-blue-600 bg-clip-text text-transparent">
+                    The Whispering Pines Experience
+                </h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-green-500 to-blue-500 mx-auto mb-6"></div>
+                <p class="text-gray-600 text-lg max-w-2xl mx-auto">
+                    Established as a premier destination in Kanatal, we offer an unparalleled blend of luxury accommodations and natural splendor.
+                </p>
+            </div>
+
+            <!-- Main Content Grid -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <!-- Left Column - Story & Information -->
+                <div class="lg:col-span-5 space-y-8">
+                    <!-- Vision Card -->
+                    <div class="bg-white rounded-2xl shadow-xl p-8 transform transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl">
+                        <div class="flex items-center mb-6">
+                            <div class="w-14 h-14 bg-green-100 rounded-full flex items-center justify-center">
+                                <svg class="w-7 h-7 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/>
+                                </svg>
+                            </div>
+                            <h3 class="text-2xl font-bold ml-4">Our Vision</h3>
+                        </div>
+                        <p class="text-gray-600 leading-relaxed">
+                            Founded in 2015, Whispering Pines emerged from a vision to create an extraordinary escape that harmoniously blends luxury with nature's raw beauty. Our commitment to excellence has established us as the region's premier mountain retreat.
+                        </p>
+                    </div>
+
+                    <!-- Location Card -->
+                    <div class="bg-white rounded-2xl shadow-xl p-8 transform transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl">
+                        <div class="flex items-center mb-6">
+                            <div class="w-14 h-14 bg-blue-100 rounded-full flex items-center justify-center">
+                                <svg class="w-7 h-7 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                                </svg>
+                            </div>
+                            <h3 class="text-2xl font-bold ml-4">Strategic Location</h3>
+                        </div>
+                        <p class="text-gray-600 leading-relaxed">
+                            Nestled at an elevation of 8,500 feet in Kanatal, our property offers panoramic Himalayan views while maintaining convenient accessibility from Delhi NCR. The pristine environment provides the perfect backdrop for an unforgettable mountain getaway.
+                        </p>
+                    </div>
+
+                    <!-- Achievement Statistics -->
+                    <div class="grid grid-cols-3 gap-6">
+                        <div class="bg-white/60 backdrop-blur-sm rounded-xl p-6 text-center transform transition-all duration-300 hover:scale-105">
+                            <div class="text-3xl font-bold text-green-600 mb-2">2000+</div>
+                            <div class="text-sm text-gray-600">Satisfied Guests</div>
+                        </div>
+                        <div class="bg-white/60 backdrop-blur-sm rounded-xl p-6 text-center transform transition-all duration-300 hover:scale-105">
+                            <div class="text-3xl font-bold text-green-600 mb-2">15+</div>
+                            <div class="text-sm text-gray-600">Luxury Suites</div>
+                        </div>
+                        <div class="bg-white/60 backdrop-blur-sm rounded-xl p-6 text-center transform transition-all duration-300 hover:scale-105">
+                            <div class="text-3xl font-bold text-green-600 mb-2">4.8</div>
+                            <div class="text-sm text-gray-600">Guest Rating</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column - Interactive Image Gallery -->
+                <div class="lg:col-span-7">
+                    <div class="grid grid-cols-6 grid-rows-5 gap-4 h-[600px]">
+                        <!-- Main Feature Image -->
+                        <div class="col-span-4 row-span-3 relative group overflow-hidden rounded-2xl">
+                            <img src="https://plus.unsplash.com/premium_photo-1686782502386-f3f3114ed9b4?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
+                                 alt="Resort Overview" 
+                                 class="w-full h-full object-cover transform transition-transform duration-500 group-hover:scale-110"
+                                 loading="lazy"/>
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                <div class="absolute bottom-6 left-6 text-white">
+                                    <h4 class="text-xl font-semibold mb-2">Luxury Accommodations</h4>
+                                    <p class="text-sm">Experience mountain living at its finest</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Supporting Images -->
+                        <div class="col-span-2 row-span-2 relative group overflow-hidden rounded-xl">
+                            <img src="https://images.unsplash.com/photo-1585543805890-6051f7829f98" 
+                                 alt="Mountain View" 
+                                 class="w-full h-full object-cover transform transition-transform duration-500 group-hover:scale-110"
+                                 loading="lazy"/>
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                <div class="absolute bottom-4 left-4 text-white">
+                                    <h4 class="text-sm font-semibold">Panoramic Views</h4>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-span-2 row-span-2 relative group overflow-hidden rounded-xl">
+                            <img src="https://images.unsplash.com/photo-1496412705862-e0088f16f791" 
+                                 alt="Dining Experience" 
+                                 class="w-full h-full object-cover transform transition-transform duration-500 group-hover:scale-110"
+                                 loading="lazy"/>
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                <div class="absolute bottom-4 left-4 text-white">
+                                    <h4 class="text-sm font-semibold">Gourmet Dining</h4>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-span-3 row-span-2 relative group overflow-hidden rounded-xl">
+                            <img src="https://images.unsplash.com/photo-1571896349842-33c89424de2d" 
+                                 alt="Adventure Activities" 
+                                 class="w-full h-full object-cover transform transition-transform duration-500 group-hover:scale-110"
+                                 loading="lazy"/>
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                <div class="absolute bottom-4 left-4 text-white">
+                                    <h4 class="text-sm font-semibold">Mountain Adventures</h4>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-span-3 row-span-2 relative group overflow-hidden rounded-xl">
+                            <img src="https://images.unsplash.com/photo-1627894483216-2138af692e32" 
+                                 alt="Wellness Facilities" 
+                                 class="w-full h-full object-cover transform transition-transform duration-500 group-hover:scale-110"
+                                 loading="lazy"/>
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                <div class="absolute bottom-4 left-4 text-white">
+                                    <h4 class="text-sm font-semibold">Wellness Center</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!-- What You Can Do Here Section -->
+    <section id="activities" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Section Header -->
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4">What You Can Do Here</h2>
+                <div class="w-24 h-1 bg-green-500 mx-auto mb-6"></div>
+                <p class="text-gray-600 text-lg max-w-3xl mx-auto">
+                    Immerse yourself in a world of extraordinary experiences, from thrilling adventures to peaceful moments of relaxation. Every activity is crafted to create lasting memories.
+                </p>
+            </div>
+
+            <!-- Activity Cards Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Luxury Accommodation Card -->
+                <div class="group bg-white rounded-xl shadow-lg overflow-hidden transform transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1521401830884-6c03c1c87ebb" 
+                             alt="Luxury accommodation" 
+                             class="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-110"/>
+                        <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black/75 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    </div>
+                    <div class="p-8">
+                        <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mb-4 transform transition-transform duration-500 group-hover:scale-110">
+                            <svg class="h-6 w-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3">Luxury Accommodation</h3>
+                        <p class="text-gray-600 mb-6">Experience the perfect blend of comfort and nature in our well-appointed luxury tents, featuring modern amenities and breathtaking mountain views.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm text-gray-500">Starting from ₹12,000/night</span>
+                            <a href="#" class="text-green-600 font-medium hover:text-green-700 flex items-center gap-2 group-hover:gap-3 transition-all duration-300">
+                                Learn more
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Adventure Activities Card -->
+                <div class="group bg-white rounded-xl shadow-lg overflow-hidden transform transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1522163182402-834f871fd851" 
+                             alt="Adventure activities" 
+                             class="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-110"/>
+                        <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black/75 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    </div>
+                    <div class="p-8">
+                        <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mb-4 transform transition-transform duration-500 group-hover:scale-110">
+                            <svg class="h-6 w-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3">Adventure Activities</h3>
+                        <p class="text-gray-600 mb-6">Challenge yourself with our curated selection of thrilling activities including rock climbing, rappelling, and guided treks through scenic trails.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm text-gray-500">Multiple packages available</span>
+                            <a href="#" class="text-green-600 font-medium hover:text-green-700 flex items-center gap-2 group-hover:gap-3 transition-all duration-300">
+                                Learn more
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Wellness Retreat Card -->
+                <div class="group bg-white rounded-xl shadow-lg overflow-hidden transform transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b" 
+                             alt="Wellness activities" 
+                             class="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-110"/>
+                        <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black/75 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    </div>
+                    <div class="p-8">
+                        <div class="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center mb-4 transform transition-transform duration-500 group-hover:scale-110">
+                            <svg class="h-6 w-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3">Wellness Retreat</h3>
+                        <p class="text-gray-600 mb-6">Rejuvenate your body and mind with our wellness programs, featuring yoga sessions, meditation, and therapeutic spa treatments.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm text-gray-500">Customizable packages</span>
+                            <a href="#" class="text-green-600 font-medium hover:text-green-700 flex items-center gap-2 group-hover:gap-3 transition-all duration-300">
+                                Learn more
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Culinary Experience Card -->
+                <div class="group bg-white rounded-xl shadow-lg overflow-hidden transform transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836" 
+                             alt="Dining experience" 
+                             class="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-110"/>
+                        <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black/75 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    </div>
+                    <div class="p-8">
+                        <div class="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center mb-4 transform transition-transform duration-500 group-hover:scale-110">
+                            <svg class="h-6 w-6 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3">Culinary Experience</h3>
+                        <p class="text-gray-600 mb-6">Savor exquisite local and international cuisine prepared by our expert chefs using fresh, seasonal ingredients from our organic garden.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm text-gray-500">Fine dining & cooking classes</span>
+                            <a href="#" class="text-green-600 font-medium hover:text-green-700 flex items-center gap-2 group-hover:gap-3 transition-all duration-300">
+                                Learn more
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Nature Walks Card -->
+                <div class="group bg-white rounded-xl shadow-lg overflow-hidden transform transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1552733407-5d5c46c3bb3b" 
+                             alt="Nature walks" 
+                             class="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-110"/>
+                        <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black/75 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    </div>
+                    <div class="p-8">
+                        <div class="w-12 h-12 bg-emerald-100 rounded-full flex items-center justify-center mb-4 transform transition-transform duration-500 group-hover:scale-110">
+                            <svg class="h-6 w-6 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3">Nature Walks</h3>
+                        <p class="text-gray-600 mb-6">Discover the region's rich biodiversity with our expert naturalists. Learn about local flora, fauna, and the delicate mountain ecosystem.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm text-gray-500">Guided tours available</span>
+                            <a href="#" class="text-green-600 font-medium hover:text-green-700 flex items-center gap-2 group-hover:gap-3 transition-all duration-300">
+                                Learn more
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cultural Experiences Card -->
+                <div class="group bg-white rounded-xl shadow-lg overflow-hidden transform transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="https://plus.unsplash.com/premium_photo-1723921232154-574f9172f3f4?q=80&w=2080&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
+                             alt="Cultural experiences" 
+                             class="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-110"/>
+                        <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black/75 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    </div>
+                    <div class="p-8">
+                        <div class="w-12 h-12 bg-amber-100 rounded-full flex items-center justify-center mb-4 transform transition-transform duration-500 group-hover:scale-110">
+                            <svg class="h-6 w-6 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5.5A2.5 2.5 0 109.5 8H12zm-7 4h14M5 12a2 2 0 110-4h14a2 2 0 110 4M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3">Cultural Experiences</h3>
+                        <p class="text-gray-600 mb-6">Immerse yourself in local culture through traditional performances, craft workshops, and authentic Himalayan experiences.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm text-gray-500">Daily cultural programs</span>
+                            <a href="#" class="text-green-600 font-medium hover:text-green-700 flex items-center gap-2 group-hover:gap-3 transition-all duration-300">
+                                Learn more
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Additional Activities Showcase -->
+            <div class="mt-16">
+                <h3 class="text-2xl font-bold text-center mb-8">More Ways to Experience Whispering Pines</h3>
+                
+                <!-- Horizontal Scrollable Activity Cards -->
+                <div class="relative">
+                    <!-- Gradient Overlay for Scroll Indication - Left -->
+                    <div class="absolute left-0 top-0 bottom-0 w-16 bg-gradient-to-r from-gray-50 to-transparent z-10"></div>
+                    
+                    <!-- Gradient Overlay for Scroll Indication - Right -->
+                    <div class="absolute right-0 top-0 bottom-0 w-16 bg-gradient-to-l from-gray-50 to-transparent z-10"></div>
+                    
+                    <div class="flex space-x-6 overflow-x-auto pb-6 scrollbar-hide relative">
+                        <!-- Photography Tours -->
+                        <div class="flex-none w-80">
+                            <div class="bg-white rounded-lg shadow-md overflow-hidden group">
+                                <div class="relative h-48">
+                                    <img src="https://images.unsplash.com/photo-1552733407-5d5c46c3bb3b" 
+                                         alt="Photography Tours" 
+                                         class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"/>
+                                    <div class="absolute inset-0 bg-black/25 group-hover:bg-black/40 transition-colors duration-300"></div>
+                                    <div class="absolute bottom-4 left-4 text-white">
+                                        <h4 class="font-semibold text-lg">Photography Tours</h4>
+                                        <p class="text-sm text-white/90">Capture mountain magic</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Meditation Sessions -->
+                        <div class="flex-none w-80">
+                            <div class="bg-white rounded-lg shadow-md overflow-hidden group">
+                                <div class="relative h-48">
+                                    <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b" 
+                                         alt="Meditation Sessions" 
+                                         class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"/>
+                                    <div class="absolute inset-0 bg-black/25 group-hover:bg-black/40 transition-colors duration-300"></div>
+                                    <div class="absolute bottom-4 left-4 text-white">
+                                        <h4 class="font-semibold text-lg">Meditation Sessions</h4>
+                                        <p class="text-sm text-white/90">Find inner peace</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Cooking Classes -->
+                        <div class="flex-none w-80">
+                            <div class="bg-white rounded-lg shadow-md overflow-hidden group">
+                                <div class="relative h-48">
+                                    <img src="https://images.unsplash.com/photo-1556910103-1c02745aae4d" 
+                                         alt="Cooking Classes" 
+                                         class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"/>
+                                    <div class="absolute inset-0 bg-black/25 group-hover:bg-black/40 transition-colors duration-300"></div>
+                                    <div class="absolute bottom-4 left-4 text-white">
+                                        <h4 class="font-semibold text-lg">Cooking Classes</h4>
+                                        <p class="text-sm text-white/90">Master local cuisine</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Star Gazing -->
+                        <div class="flex-none w-80">
+                            <div class="bg-white rounded-lg shadow-md overflow-hidden group">
+                                <div class="relative h-48">
+                                    <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b" 
+                                         alt="Star Gazing" 
+                                         class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"/>
+                                    <div class="absolute inset-0 bg-black/25 group-hover:bg-black/40 transition-colors duration-300"></div>
+                                    <div class="absolute bottom-4 left-4 text-white">
+                                        <h4 class="font-semibold text-lg">Star Gazing</h4>
+                                        <p class="text-sm text-white/90">Explore the night sky</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Activity Planning CTA -->
+                <div class="mt-12 text-center">
+                    <p class="text-gray-600 mb-6">Looking for a customized experience? Let us help you plan the perfect stay.</p>
+                    <button class="bg-green-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-green-700 transform hover:scale-105 transition-all duration-300">
+                        Plan Your Activities
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience and Activities Section -->
+    <section class="py-24 bg-white relative overflow-hidden">
+        <!-- Decorative Background -->
+        <div class="absolute inset-0 bg-gradient-to-br from-green-50 to-blue-50 opacity-50"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+            <!-- Section Header -->
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4">Mountain Experiences</h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-green-500 to-blue-500 mx-auto mb-6"></div>
+                <p class="text-gray-600 text-lg max-w-3xl mx-auto">
+                    Discover our curated collection of activities that blend adventure, luxury, and the natural splendor of the Himalayas.
+                </p>
+            </div>
+
+            <!-- Featured Experiences -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+                <!-- Sunrise Trek -->
+                <div class="group bg-white rounded-xl shadow-lg overflow-hidden transform transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl">
+                    <div class="relative h-64">
+                        <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b" 
+                             alt="Sunrise Trek" 
+                             class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"/>
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent">
+                            <div class="absolute bottom-4 left-4 right-4">
+                                <h3 class="text-white text-xl font-bold mb-2">Sunrise Trek</h3>
+                                <p class="text-gray-200">Witness the majestic Himalayan sunrise</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="flex items-center">
+                                <div class="w-10 h-10 bg-amber-100 rounded-full flex items-center justify-center">
+                                    <svg class="w-5 h-5 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/>
+                                    </svg>
+                                </div>
+                                <span class="ml-2 text-gray-600">Duration: 3-4 hours</span>
+                            </div>
+                            <span class="bg-green-100 text-green-800 text-xs font-semibold px-3 py-1 rounded-full">Popular</span>
+                        </div>
+                        <ul class="space-y-3 mb-6">
+                            <li class="flex items-center text-gray-600">
+                                <svg class="w-5 h-5 mr-2 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                                </svg>
+                                Professional guide included
+                            </li>
+                            <li class="flex items-center text-gray-600">
+                                <svg class="w-5 h-5 mr-2 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                                </svg>
+                                Photography opportunities
+                            </li>
+                            <li class="flex items-center text-gray-600">
+                                <svg class="w-5 h-5 mr-2 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                                </svg>
+                                Breakfast included
+                            </li>
+                        </ul>
+                        <button class="w-full bg-green-600 text-white py-3 rounded-lg hover:bg-green-700 transition-colors duration-300">
+                            Book Experience
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Rock Climbing -->
+                <div class="group bg-white rounded-xl shadow-lg overflow-hidden transform transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl">
+                    <div class="relative h-64">
+                        <img src="https://images.unsplash.com/photo-1522163182402-834f871fd851" 
+                             alt="Rock Climbing" 
+                             class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"/>
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent">
+                            <div class="absolute bottom-4 left-4 right-4">
+                                <h3 class="text-white text-xl font-bold mb-2">Rock Climbing</h3>
+                                <p class="text-gray-200">Challenge yourself on natural rock faces</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="flex items-center">
+                                <div class="w-10 h-10 bg-red-100 rounded-full flex items-center justify-center">
+                                    <svg class="w-5 h-5 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                                    </svg>
+                                </div>
+                                <span class="ml-2 text-gray-600">Duration: 2-3 hours</span>
+                            </div>
+                            <span class="bg-orange-100 text-orange-800 text-xs font-semibold px-3 py-1 rounded-full">Advanced</span>
+                        </div>
+                        <ul class="space-y-3 mb-6">
+                            <li class="flex items-center text-gray-600">
+                                <svg class="w-5 h-5 mr-2 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                                </svg>
+                                Safety equipment provided
+                            </li>
+                            <li class="flex items-center text-gray-600">
+                                <svg class="w-5 h-5 mr-2 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                                </svg>
+                                Expert instructors
+                            </li>
+                            <li class="flex items-center text-gray-600">
+                                <svg class="w-5 h-5 mr-2 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                                </svg>
+                                All skill levels welcome
+                            </li>
+                        </ul>
+                        <button class="w-full bg-green-600 text-white py-3 rounded-lg hover:bg-green-700 transition-colors duration-300">
+                            Book Experience
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Nature Photography -->
+                <div class="group bg-white rounded-xl shadow-lg overflow-hidden transform transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl">
+                    <div class="relative h-64">
+                        <img src="https://images.unsplash.com/photo-1552733407-5d5c46c3bb3b" 
+                             alt="Nature Photography" 
+                             class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"/>
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent">
+                            <div class="absolute bottom-4 left-4 right-4">
+                                <h3 class="text-white text-xl font-bold mb-2">Nature Photography</h3>
+                                <p class="text-gray-200">Capture the beauty of mountains</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="flex items-center">
+                                <div class="w-10 h-10 bg-purple-100 rounded-full flex items-center justify-center">
+                                    <svg class="w-5 h-5 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"/>
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"/>
+                                    </svg>
+                                </div>
+                                <span class="ml-2 text-gray-600">Duration: 4 hours</span>
+                            </div>
+                            <span class="bg-blue-100 text-blue-800 text-xs font-semibold px-3 py-1 rounded-full">Creative</span>
+                        </div>
+                        <ul class="space-y-3 mb-6">
+                            <li class="flex items-center text-gray-600">
+                                <svg class="w-5 h-5 mr-2 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                                </svg>
+                                Professional guidance
+                            </li>
+                            <li class="flex items-center text-gray-600">
+                                <svg class="w-5 h-5 mr-2 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                                </svg>
+                                Best photo locations
+                            </li>
+                            <li class="flex items-center text-gray-600">
+                                <svg class="w-5 h-5 mr-2 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                                </svg>
+                                Camera rentals available
+                            </li>
+                        </ul>
+                        <button class="w-full bg-green-600 text-white py-3 rounded-lg hover:bg-green-700 transition-colors duration-300">
+                            Book Experience
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Activity Categories -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16">
+                <div class="bg-white/80 backdrop-blur-sm rounded-xl p-6 text-center transform transition-all duration-300 hover:-translate-y-2">
+                    <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                        </svg>
+                    </div>
+                    <h4 class="text-lg font-semibold mb-2">Adventure</h4>
+                    <p class="text-gray-600">8+ thrilling activities</p>
+                </div>
+
+                <div class="bg-white/80 backdrop-blur-sm rounded-xl p-6 text-center transform transition-all duration-300 hover:-translate-y-2">
+                    <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+                        </svg>
+                    </div>
+                    <h4 class="text-lg font-semibold mb-2">Wellness</h4>
+                    <p class="text-gray-600">5+ relaxation programs</p>
+                </div>
+
+                <div class="bg-white/80 backdrop-blur-sm rounded-xl p-6 text-center transform transition-all duration-300 hover:-translate-y-2">
+                    <div class="w-12 h-12 bg-amber-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-6 h-6 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/>
+                        </svg>
+                    </div>
+                    <h4 class="text-lg font-semibold mb-2">Nature</h4>
+                    <p class="text-gray-600">6+ guided tours</p>
+                </div>
+
+                <div class="bg-white/80 backdrop-blur-sm rounded-xl p-6 text-center transform transition-all duration-300 hover:-translate-y-2">
+                    <div class="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"/>
+                        </svg>
+                    </div>
+                    <h4 class="text-lg font-semibold mb-2">Cultural</h4>
+                    <p class="text-gray-600">4+ local experiences</p>
+                </div>
+            </div>
+
+            <!-- Seasonal Specials -->
+            <div class="bg-white rounded-2xl shadow-xl p-8 mb-16">
+                <div class="text-center mb-8">
+                    <h3 class="text-2xl font-bold mb-2">Seasonal Experiences</h3>
+                    <p class="text-gray-600">Special activities available during different seasons</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+                    <!-- Spring -->
+                    <div class="p-4 border border-green-100 rounded-xl hover:border-green-300 transition-colors duration-300">
+                        <div class="flex items-center mb-3">
+                            <div class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center">
+                                <svg class="w-4 h-4 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+                                </svg>
+                            </div>
+                            <span class="ml-2 font-semibold">Spring</span>
+                        </div>
+                        <ul class="space-y-2 text-sm text-gray-600">
+                            <li>Flower Trails</li>
+                            <li>Bird Watching</li>
+                            <li>Valley Hiking</li>
+                        </ul>
+                    </div>
+
+                    <!-- Summer -->
+                    <div class="p-4 border border-yellow-100 rounded-xl hover:border-yellow-300 transition-colors duration-300">
+                        <div class="flex items-center mb-3">
+                            <div class="w-8 h-8 bg-yellow-100 rounded-full flex items-center justify-center">
+                                <svg class="w-4 h-4 text-yellow-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/>
+                                </svg>
+                            </div>
+                            <span class="ml-2 font-semibold">Summer</span>
+                        </div>
+                        <ul class="space-y-2 text-sm text-gray-600">
+                            <li>Adventure Sports</li>
+                            <li>Mountain Biking</li>
+                            <li>Night Camping</li>
+                        </ul>
+                    </div>
+
+                    <!-- Autumn -->
+                    <div class="p-4 border border-orange-100 rounded-xl hover:border-orange-300 transition-colors duration-300">
+                        <div class="flex items-center mb-3">
+                            <div class="w-8 h-8 bg-orange-100 rounded-full flex items-center justify-center">
+                                <svg class="w-4 h-4 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"/>
+                                </svg>
+                            </div>
+                            <span class="ml-2 font-semibold">Autumn</span>
+                        </div>
+                        <ul class="space-y-2 text-sm text-gray-600">
+                            <li>Photography Tours</li>
+                            <li>Cultural Festivals</li>
+                            <li>Bonfire Nights</li>
+                        </ul>
+                    </div>
+
+                    <!-- Winter -->
+                    <div class="p-4 border border-blue-100 rounded-xl hover:border-blue-300 transition-colors duration-300">
+                        <div class="flex items-center mb-3">
+                            <div class="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center">
+                                <svg class="w-4 h-4 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/>
+                                </svg>
+                            </div>
+                            <span class="ml-2 font-semibold">Winter</span>
+                        </div>
+                        <ul class="space-y-2 text-sm text-gray-600">
+                            <li>Snow Trekking</li>
+                            <li>Winter Sports</li>
+                            <li>Hot Springs Visit</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Experience Finder -->
+            <div class="bg-white/80 backdrop-blur-sm rounded-2xl shadow-xl p-8">
+                <div class="text-center mb-8">
+                    <h3 class="text-2xl font-bold mb-2">Find Your Perfect Experience</h3>
+                    <p class="text-gray-600">Let us help you discover activities that match your interests</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div>
+                        <label class="block text-gray-700 font-semibold mb-2">Activity Level</label>
+                        <select class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent">
+                            <option>All Levels</option>
+                            <option>Easy</option>
+                            <option>Moderate</option>
+                            <option>Challenging</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label class="block text-gray-700 font-semibold mb-2">Duration</label>
+                        <select class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent">
+                            <option>Any Duration</option>
+                            <option>Half Day</option>
+                            <option>Full Day</option>
+                            <option>Multi-day</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label class="block text-gray-700 font-semibold mb-2">Category</label>
+                        <select class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent">
+                            <option>All Categories</option>
+                            <option>Adventure</option>
+                            <option>Nature</option>
+                            <option>Wellness</option>
+                            <option>Cultural</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="mt-6 text-center">
+                    <button class="bg-green-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-green-700 transition-colors duration-300">
+                        Find Activities
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!-- Testimonials Section -->
+    <section class="py-24 bg-gradient-to-b from-white to-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Section Header -->
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4">Guest Experiences</h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-green-500 to-blue-500 mx-auto mb-6"></div>
+                <p class="text-gray-600 text-lg max-w-2xl mx-auto">
+                    Discover what our valued guests have to say about their stay at Whispering Pines.
+                </p>
+            </div>
+
+            <!-- Featured Testimonials Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+                <!-- Testimonial 1 -->
+                <div class="bg-white rounded-xl shadow-lg p-8 transform transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
+                    <div class="flex items-center mb-6">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d" 
+                             alt="Guest Photo" 
+                             class="w-14 h-14 rounded-full object-cover mr-4"/>
+                        <div>
+                            <h4 class="font-semibold text-lg">Rahul Sharma</h4>
+                            <div class="flex items-center">
+                                <div class="flex text-amber-400">
+                                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                                    </svg>
+                                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                                    </svg>
+                                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                                    </svg>
+                                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                                    </svg>
+                                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                                    </svg>
+                                </div>
+                                <span class="text-gray-500 text-sm ml-2">2 months ago</span>
+                            </div>
+                        </div>
+                    </div>
+                    <blockquote class="text-gray-600 leading-relaxed mb-4">
+                        "An exceptional mountain retreat that exceeded all expectations. The perfect blend of luxury and adventure, complemented by impeccable service and stunning views. The sunrise trek was absolutely unforgettable."
+                    </blockquote>
+                    <div class="flex items-center text-sm text-gray-500">
+                        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                        </svg>
+                        New Delhi, India
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="bg-white rounded-xl shadow-lg p-8 transform transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
+                    <div class="flex items-center mb-6">
+                        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330" 
+                             alt="Guest Photo" 
+                             class="w-14 h-14 rounded-full object-cover mr-4"/>
+                        <div>
+                            <h4 class="font-semibold text-lg">Sarah Anderson</h4>
+                            <div class="flex items-center">
+                                <div class="flex text-amber-400">
+                                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                                    </svg>
+                                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                                    </svg>
+                                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                                    </svg>
+                                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                                    </svg>
+                                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                                    </svg>
+                                </div>
+                                <span class="text-gray-500 text-sm ml-2">1 month ago</span>
+                            </div></div>
+                    </div>
+                    <blockquote class="text-gray-600 leading-relaxed mb-4">
+                        "The wellness retreat program exceeded all expectations. The yoga sessions with mountain views were therapeutic, and the spa treatments were exceptional. The staff's attention to detail made the experience truly memorable."
+                    </blockquote>
+                    <div class="flex items-center text-sm text-gray-500">
+                        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                        </svg>
+                        London, UK
+                    </div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="bg-white rounded-xl shadow-lg p-8 transform transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
+                    <div class="flex items-center mb-6">
+                        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e" 
+                             alt="Guest Photo" 
+                             class="w-14 h-14 rounded-full object-cover mr-4"/>
+                        <div>
+                            <h4 class="font-semibold text-lg">David Chen</h4>
+                            <div class="flex items-center">
+                                <div class="flex text-amber-400">
+                                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                                    </svg>
+                                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                                    </svg>
+                                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                                    </svg>
+                                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                                    </svg>
+                                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                                    </svg>
+                                </div>
+                                <span class="text-gray-500 text-sm ml-2">3 weeks ago</span>
+                            </div>
+                        </div>
+                    </div>
+                    <blockquote class="text-gray-600 leading-relaxed mb-4">
+                        "Our corporate retreat at Whispering Pines was transformative. The team-building activities, combined with the serene environment, helped foster meaningful connections. The adventure activities were well-organized and safe."
+                    </blockquote>
+                    <div class="flex items-center text-sm text-gray-500">
+                        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                        </svg>
+                        Singapore
+                    </div>
+                </div>
+            </div>
+
+            <!-- Review Summary -->
+            <div class="bg-white rounded-xl shadow-lg p-8">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                    <!-- Overall Rating -->
+                    <div class="text-center md:text-left">
+                        <h3 class="text-3xl font-bold mb-2">4.8 out of 5</h3>
+                        <div class="flex items-center justify-center md:justify-start mb-4">
+                            <div class="flex text-amber-400">
+                                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                                </svg>
+                                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                                </svg>
+                                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                                </svg>
+                                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                                </svg>
+                                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                                </svg>
+                            </div>
+                            <span class="text-gray-500 ml-2">Based on 200+ reviews</span>
+                        </div>
+                        <p class="text-gray-600">Consistently rated excellent for service, amenities, and location.</p></div>
+
+                    <!-- Rating Categories -->
+                    <div class="grid grid-cols-1 gap-4">
+                        <!-- Service Rating -->
+                        <div class="flex items-center">
+                            <span class="w-24 text-gray-600">Service</span>
+                            <div class="flex-1 mx-4">
+                                <div class="h-2 bg-gray-200 rounded-full">
+                                    <div class="h-2 bg-green-500 rounded-full" style="width: 96%"></div>
+                                </div>
+                            </div>
+                            <span class="text-gray-600">4.8</span>
+                        </div>
+
+                        <!-- Location Rating -->
+                        <div class="flex items-center">
+                            <span class="w-24 text-gray-600">Location</span>
+                            <div class="flex-1 mx-4">
+                                <div class="h-2 bg-gray-200 rounded-full">
+                                    <div class="h-2 bg-green-500 rounded-full" style="width: 98%"></div>
+                                </div>
+                            </div>
+                            <span class="text-gray-600">4.9</span>
+                        </div>
+
+                        <!-- Cleanliness Rating -->
+                        <div class="flex items-center">
+                            <span class="w-24 text-gray-600">Cleanliness</span>
+                            <div class="flex-1 mx-4">
+                                <div class="h-2 bg-gray-200 rounded-full">
+                                    <div class="h-2 bg-green-500 rounded-full" style="width: 94%"></div>
+                                </div>
+                            </div>
+                            <span class="text-gray-600">4.7</span>
+                        </div>
+
+                        <!-- Value Rating -->
+                        <div class="flex items-center">
+                            <span class="w-24 text-gray-600">Value</span>
+                            <div class="flex-1 mx-4">
+                                <div class="h-2 bg-gray-200 rounded-full">
+                                    <div class="h-2 bg-green-500 rounded-full" style="width: 92%"></div>
+                                </div>
+                            </div>
+                            <span class="text-gray-600">4.6</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Review Highlights -->
+            <div class="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white/60 backdrop-blur-sm rounded-xl p-6 text-center transform transition-all duration-300 hover:scale-105">
+                    <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                        </svg>
+                    </div>
+                    <h4 class="text-lg font-semibold mb-2">Exceptional Service</h4>
+                    <p class="text-gray-600">98% of guests praised our staff's hospitality</p>
+                </div>
+
+                <div class="bg-white/60 backdrop-blur-sm rounded-xl p-6 text-center transform transition-all duration-300 hover:scale-105">
+                    <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21l-7-5-7 5V5a2 2 0 012-2h10a2 2 0 012 2v16z"/>
+                        </svg>
+                    </div>
+                    <h4 class="text-lg font-semibold mb-2">Repeat Guests</h4>
+                    <p class="text-gray-600">40% of our guests are returning visitors</p>
+                </div>
+
+                <div class="bg-white/60 backdrop-blur-sm rounded-xl p-6 text-center transform transition-all duration-300 hover:scale-105">
+                    <div class="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        </svg>
+                    </div>
+                    <h4 class="text-lg font-semibold mb-2">Quick Response</h4>
+                    <p class="text-gray-600">Average response time under 15 minutes</p>
+                </div>
+            </div>
+
+            <!-- Leave Review CTA -->
+            <div class="mt-16 text-center">
+                <p class="text-gray-600 mb-6">Share your Whispering Pines experience with fellow travelers</p>
+                <button class="bg-green-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-green-700 transform hover:scale-105 transition-all duration-300 shadow-lg">
+                    Write a Review
+                </button>
+            </div>
+        </div>
+    </section>
+
+<!-- Our Esteemed Clients Section -->
+    <section class="py-24 bg-white relative overflow-hidden">
+        <!-- Decorative Background -->
+        <div class="absolute inset-0">
+            <div class="absolute inset-0 bg-gradient-to-br from-gray-50 to-green-50 opacity-50"></div>
+            <div class="absolute inset-y-0 left-0 w-1/2 bg-gradient-to-r from-white to-transparent"></div>
+            <div class="absolute inset-y-0 right-0 w-1/2 bg-gradient-to-l from-white to-transparent"></div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+            <!-- Section Header -->
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4">Our Esteemed Clients</h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-green-500 to-blue-500 mx-auto mb-6"></div>
+                <p class="text-gray-600 text-lg max-w-3xl mx-auto">
+                    Trusted by leading organizations for corporate retreats, team building events, and luxury experiences.
+                </p>
+            </div>
+
+            <!-- Client Logo Grid with Hover Effects -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-16">
+                <!-- Fortune 500 Company -->
+                <div class="group relative bg-white p-6 rounded-xl shadow-md transition-all duration-300 hover:shadow-xl">
+                    <div class="flex items-center justify-center h-24">
+                        <img src="https://www.whisperingpines.in/images/client-logo/kotak.png" 
+                             alt="Client Logo" 
+                             class="max-h-12 duration-300"/>
+                    </div>
+                </div>
+
+                <!-- Tech Giant -->
+                <div class="group relative bg-white p-6 rounded-xl shadow-md transition-all duration-300 hover:shadow-xl">
+                    <div class="flex items-center justify-center h-24">
+                        <img src="https://www.whisperingpines.in/images/client-logo/ing.png" 
+                             alt="Client Logo" 
+                             class="max-h-12 duration-300"/>
+                    </div>
+                </div>
+
+                <!-- Global Consulting Firm -->
+                <div class="group relative bg-white p-6 rounded-xl shadow-md transition-all duration-300 hover:shadow-xl">
+                    <div class="flex items-center justify-center h-24">
+                        <img src="https://www.whisperingpines.in/images/client-logo/convergys.png" 
+                             alt="Client Logo" 
+                             class="max-h-12 duration-300"/>
+                    </div>
+                </div>
+
+                <!-- Leading Bank -->
+                <div class="group relative bg-white p-6 rounded-xl shadow-md transition-all duration-300 hover:shadow-xl">
+                    <div class="flex items-center justify-center h-24">
+                        <img src="https://www.whisperingpines.in/images/client-logo/hdfc.png" 
+                             alt="Client Logo" 
+                             class="max-h-12 duration-300"/>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Partnership Highlights -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+                <!-- Corporate Retreats -->
+                <div class="bg-white p-6 rounded-xl shadow-lg">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center">
+                            <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-lg font-semibold ml-4">Corporate Retreats</h3>
+                    </div>
+                    <p class="text-gray-600">Hosted over 100+ successful corporate team building events and leadership retreats with Fortune 500 companies.</p>
+                </div>
+
+                <!-- Trusted Partnerships -->
+                <div class="bg-white p-6 rounded-xl shadow-lg">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center">
+                            <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-lg font-semibold ml-4">Trusted Partnerships</h3>
+                    </div>
+                    <p class="text-gray-600">Long-standing relationships with industry leaders, ensuring consistent quality and exceptional experiences.</p>
+                </div>
+
+                <!-- Industry Recognition -->
+                <div class="bg-white p-6 rounded-xl shadow-lg">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center">
+                            <svg class="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-lg font-semibold ml-4">Industry Recognition</h3>
+                    </div>
+                    <p class="text-gray-600">Award-winning venue for corporate events and professional development programs.</p>
+                </div>
+            </div>
+
+            <!-- Client Statistics -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-16">
+                <div class="text-center">
+                    <div class="text-3xl font-bold text-green-600 mb-2">500+</div>
+                    <div class="text-gray-600">Corporate Events</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-3xl font-bold text-green-600 mb-2">50+</div>
+                    <div class="text-gray-600">Fortune 500 Clients</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-3xl font-bold text-green-600 mb-2">98%</div>
+                    <div class="text-gray-600">Client Satisfaction</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-3xl font-bold text-green-600 mb-2">25k+</div>
+                    <div class="text-gray-600">Professionals Hosted</div>
+                </div>
+            </div>
+
+            <!-- Corporate Inquiry CTA -->
+            <div class="bg-white/80 backdrop-blur-sm rounded-2xl shadow-xl p-8 text-center">
+                <h3 class="text-2xl font-bold mb-4">Plan Your Corporate Event</h3>
+                <p class="text-gray-600 mb-6 max-w-2xl mx-auto">
+                    Looking to organize a corporate retreat or team building event? Our dedicated event planning team is here to help create a customized experience for your organization.
+                </p>
+                <button class="bg-green-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-green-700 transform hover:scale-105 transition-all duration-300">
+                    Contact Corporate Sales
+                </button>
+            </div>
+        </div>
+    </section>
+
+<!-- Contact Section -->
+    <section id="contact" class="py-24 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Section Header -->
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4">Get in Touch</h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-green-500 to-blue-500 mx-auto mb-6"></div>
+                <p class="text-gray-600 text-lg max-w-2xl mx-auto">
+                    Have questions about your stay? Our team is here to help make your mountain getaway perfect.
+                </p>
+            </div>
+
+            <!-- Contact Content -->
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <!-- Contact Information -->
+                <div class="lg:col-span-1 space-y-8">
+                    <!-- Location Info -->
+                    <div class="bg-white rounded-xl shadow-lg p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center">
+                                <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                                </svg>
+                            </div>
+                            <div class="ml-4">
+                                <h3 class="text-xl font-semibold">Location</h3>
+                                <p class="text-gray-600">Kanatal, Uttarakhand, India</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-600 ml-16">Near Dhanaulti, 78km from Dehradun</p>
+                    </div>
+
+                    <!-- Phone Info -->
+                    <div class="bg-white rounded-xl shadow-lg p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center">
+                                <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+                                </svg>
+                            </div>
+                            <div class="ml-4">
+                                <h3 class="text-xl font-semibold">Phone</h3>
+                                <a href="tel:+919876543210" class="text-gray-600 hover:text-green-600 transition-colors">+91 98765 43210</a>
+                            </div>
+                        </div>
+                        <p class="text-gray-600 ml-16">Available 24/7 for reservations</p>
+                    </div>
+
+                    <!-- Email Info -->
+                    <div class="bg-white rounded-xl shadow-lg p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center">
+                                <svg class="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                                </svg>
+                            </div>
+                            <div class="ml-4">
+                                <h3 class="text-xl font-semibold">Email</h3>
+                                <a href="mailto:info@whisperingpines.com" class="text-gray-600 hover:text-green-600 transition-colors">info@whisperingpines.com</a>
+                            </div>
+                        </div>
+                        <p class="text-gray-600 ml-16">We'll respond within 24 hours</p>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="lg:col-span-2">
+                    <div class="bg-white rounded-xl shadow-lg p-8">
+                        <form class="space-y-6">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div>
+                                    <label class="block text-gray-700 text-sm font-bold mb-2" for="name">
+                                        Name
+                                    </label>
+                                    <input class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:border-green-500" 
+                                           type="text" 
+                                           id="name" 
+                                           placeholder="Your name"/>
+                                </div>
+                                <div>
+                                    <label class="block text-gray-700 text-sm font-bold mb-2" for="email">
+                                        Email
+                                    </label>
+                                    <input class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:border-green-500" 
+                                           type="email" 
+                                           id="email" 
+                                           placeholder="Your email"/>
+                                </div>
+                            </div>
+                            <div>
+                                <label class="block text-gray-700 text-sm font-bold mb-2" for="subject">
+                                    Subject
+                                </label>
+                                <input class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:border-green-500" 
+                                       type="text" 
+                                       id="subject" 
+                                       placeholder="Message subject"/>
+                            </div>
+                            <div>
+                                <label class="block text-gray-700 text-sm font-bold mb-2" for="message">
+                                    Message
+                                </label>
+                                <textarea class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:border-green-500 h-32" 
+                                          id="message" 
+                                          placeholder="Your message"></textarea>
+                            </div>
+                            <div class="flex justify-end">
+                                <button type="submit" class="bg-green-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-green-700 transition-colors duration-300">
+                                    Send Message
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white pt-20 pb-6">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+                <!-- Company Info -->
+                <div>
+                    <h3 class="text-2xl font-semibold mb-6">Whispering Pines</h3>
+                    <p class="text-gray-400 mb-6">
+                        Luxury mountain resort offering unforgettable experiences in the heart of the Himalayas.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <span class="sr-only">Facebook</span>
+                            <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <span class="sr-only">Instagram</span>
+                            <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14C.333 4.905.131 5.775.072 7.053.012 8.333 0 8.74 0 12s.015 3.667.072 4.947c.06 1.277.261 2.148.558 2.913.306.788.717 1.459 1.384 2.126.667.666 1.336 1.079 2.126 1.384.766.296 1.636.499 2.913.558C8.333 23.988 8.74 24 12 24s3.667-.015 4.947-.072c1.277-.06 2.148-.262 2.913-.558.788-.306 1.459-.718 2.126-1.384.666-.667 1.079-1.335 1.384-2.126.296-.765.499-1.636.558-2.913.06-1.28.072-1.687.072-4.947s-.015-3.667-.072-4.947c-.06-1.277-.262-2.149-.558-2.913-.306-.789-.718-1.459-1.384-2.126C21.319 1.347 20.651.935 19.86.63c-.765-.297-1.636-.499-2.913-.558C15.667.012 15.26 0 12 0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.015 3.585-.074 4.85c-.061 1.17-.256 1.805-.421 2.227-.224.562-.479.96-.897 1.382-.419.419-.824.679-1.38.896-.42.164-1.065.36-2.235.413-1.274.057-1.649.07-4.859.07-3.211 0-3.586-.015-4.859-.074-1.171-.061-1.816-.256-2.236-.421-.569-.224-.96-.479-1.379-.897-.421-.419-.69-.824-.9-1.38-.165-.42-.359-1.065-.42-2.235-.045-1.26-.061-1.649-.061-4.844 0-3.196.016-3.586.061-4.861.061-1.17.255-1.814.42-2.234.21-.57.479-.96.9-1.381.419-.419.81-.689 1.379-.898.42-.166 1.051-.361 2.221-.421 1.275-.045 1.65-.06 4.859-.06l.045.03zm0 3.678c-3.405 0-6.162 2.76-6.162 6.162 0 3.405 2.76 6.162 6.162 6.162 3.405 0 6.162-2.76 6.162-6.162 0-3.405-2.76-6.162-6.162-6.162zM12 16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm7.846-10.405c0 .795-.646 1.44-1.44 1.44-.795 0-1.44-.646-1.44-1.44 0-.794.646-1.439 1.44-1.439.793-.001 1.44.645 1.44 1.439z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <span class="sr-only">Twitter</span>
+                            <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="text-lg font-semibold mb-6">Quick Links</h4>
+                    <ul class="space-y-4">
+                        <li>
+                            <a href="#about" class="text-gray-400 hover:text-white transition-colors">About Us</a>
+                        </li>
+                        <li>
+                            <a href="#rooms" class="text-gray-400 hover:text-white transition-colors">Accommodations</a>
+                        </li>
+                        <li>
+                            <a href="#activities" class="text-gray-400 hover:text-white transition-colors">Activities</a>
+                        </li>
+                        <li>
+                            <a href="#gallery" class="text-gray-400 hover:text-white transition-colors">Gallery</a>
+                        </li>
+                        <li>
+                            <a href="#contact" class="text-gray-400 hover:text-white transition-colors">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Our Services -->
+                <div>
+                    <h4 class="text-lg font-semibold mb-6">Our Services</h4>
+                    <ul class="space-y-4">
+                        <li>
+                            <a href="#" class="text-gray-400 hover:text-white transition-colors">Luxury Accommodation</a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-gray-400 hover:text-white transition-colors">Adventure Activities</a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-gray-400 hover:text-white transition-colors">Corporate Events</a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-gray-400 hover:text-white transition-colors">Wellness Programs</a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-gray-400 hover:text-white transition-colors">Wedding Venues</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Newsletter -->
+                <div>
+                    <h4 class="text-lg font-semibold mb-6">Newsletter</h4>
+                    <p class="text-gray-400 mb-4">
+                        Subscribe to our newsletter for special offers and updates.
+                    </p>
+                    <form class="space-y-4">
+                        <div>
+                            <input type="email" 
+                                   class="w-full px-4 py-3 bg-gray-800 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500" 
+                                   placeholder="Your email address"/>
+                        </div>
+                        <button type="submit" 
+                                class="w-full bg-green-600 text-white px-4 py-3 rounded-lg hover:bg-green-700 transition-colors duration-300">
+                            Subscribe
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Contact Bar -->
+            <div class="border-t border-gray-800 pt-8 pb-12">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="flex items-center justify-center md:justify-start">
+                        <svg class="h-6 w-6 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                        </svg>
+                        <span class="text-gray-400">Kanatal, Uttarakhand, India</span>
+                    </div>
+                    <div class="flex items-center justify-center">
+                        <svg class="h-6 w-6 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+                        </svg>
+                        <span class="text-gray-400">+91 98765 43210</span>
+                    </div>
+                    <div class="flex items-center justify-center md:justify-end">
+                        <svg class="h-6 w-6 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                        </svg>
+                        <span class="text-gray-400">info@whisperingpines.com</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom Bar -->
+            <div class="border-t border-gray-800 pt-8">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <div class="text-gray-400 text-sm mb-4 md:mb-0">
+                        © 2025 Whispering Pines. All rights reserved.
+                    </div>
+                    <div class="flex space-x-6">
+                        <a href="#" class="text-gray-400 hover:text-white text-sm transition-colors">Privacy Policy</a>
+                        <a href="#" class="text-gray-400 hover:text-white text-sm transition-colors">Terms of Service</a>
+                        <a href="#" class="text-gray-400 hover:text-white text-sm transition-colors">Cookie Policy</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button id="scrollToTop" 
+            class="fixed bottom-8 right-8 bg-green-600 text-white p-3 rounded-full shadow-lg hover:bg-green-700 transition-all duration-300 opacity-0 invisible">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"/>
+        </svg>
+    </button>
+
+    <!-- Add this script at the end of your body tag -->
+    <script>
+        // Scroll to Top Button Functionality
+        const scrollToTopBtn = document.getElementById('scrollToTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                scrollToTopBtn.classList.remove('opacity-0', 'invisible');
+                scrollToTopBtn.classList.add('opacity-100', 'visible');
+            } else {
+                scrollToTopBtn.classList.add('opacity-0', 'invisible');
+                scrollToTopBtn.classList.remove('opacity-100', 'visible');
+            }
+        });
+
+        scrollToTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    </script>
+
+    <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const menuButton = document.getElementById("mobile-menu-button");
+        const mobileMenu = document.getElementById("mobile-menu");
+        const closeButton = document.getElementById("close-menu");
+
+        // Function to open the menu
+        menuButton.addEventListener("click", function () {
+            mobileMenu.classList.remove("-translate-x-full");
+            mobileMenu.classList.add("translate-x-0");
+        });
+
+        // Function to close the menu
+        closeButton.addEventListener("click", function () {
+            mobileMenu.classList.remove("translate-x-0");
+            mobileMenu.classList.add("-translate-x-full");
+        });
+
+        // Close menu when clicking outside of it
+        document.addEventListener("click", function (event) {
+            if (!mobileMenu.contains(event.target) && !menuButton.contains(event.target)) {
+                mobileMenu.classList.add("-translate-x-full");
+            }
+        });
+    });
+    </script>
+
+
+    <script>
+        // Function to toggle mobile menu
+        function toggleMobileMenu() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        }
+
+        // Scroll to Top Button Functionality
+        const scrollToTopBtn = document.getElementById('scrollToTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                scrollToTopBtn.classList.remove('opacity-0', 'invisible');
+                scrollToTopBtn.classList.add('opacity-100', 'visible');
+            } else {
+                scrollToTopBtn.classList.add('opacity-0', 'invisible');
+                scrollToTopBtn.classList.remove('opacity-100', 'visible');
+            }
+        });
+
+        scrollToTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    </script>
+</body>
+</html>

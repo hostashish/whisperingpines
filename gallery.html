@@ -1,0 +1,859 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Whispering Pines - Luxury Mountain Resort</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+        .animate-float {
+            animation: float 6s ease-in-out infinite;
+        }
+        @keyframes blob {
+            0% { transform: translate(0px, 0px) scale(1); }
+            33% { transform: translate(30px, -50px) scale(1.1); }
+            66% { transform: translate(-20px, 20px) scale(0.9); }
+            100% { transform: translate(0px, 0px) scale(1); }
+        }
+        .animate-blob {
+            animation: blob 7s infinite;
+        }
+        .animation-delay-2000 {
+            animation-delay: 2s;
+        }
+        .animation-delay-4000 {
+            animation-delay: 4s;
+        }
+        .scrollbar-hide::-webkit-scrollbar {
+            display: none;
+        }
+        .scrollbar-hide {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation Bar -->
+    <!-- Navigation Bar -->
+    <nav class="bg-white shadow-lg fixed w-full z-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <div class="text-xl font-semibold text-green-600">
+                        <img src="https://www.whisperingpines.in/images/logo.png" class="h-10 md:h-12 w-auto">
+
+                    </div>
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#home" class="text-gray-600 hover:text-green-600 transition-colors duration-300">Home</a>
+                    <a href="#about" class="text-gray-600 hover:text-green-600 transition-colors duration-300">About</a>
+                    <a href="#activities" class="text-gray-600 hover:text-green-600 transition-colors duration-300">Activities</a>
+                    <a href="#gallery" class="text-gray-600 hover:text-green-600 transition-colors duration-300">Gallery</a>
+                    <a href="#contact" class="text-gray-600 hover:text-green-600 transition-colors duration-300">Contact</a>
+                    <button class="bg-green-600 text-white px-6 py-2 rounded-md hover:bg-green-700 transition-all duration-300 transform hover:scale-105">
+                        Book Now
+                    </button>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" type="button" class="text-gray-600 hover:text-green-600 focus:outline-none">
+                        <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Mobile Menu (Drawer) -->
+            <div id="mobile-menu" class="fixed inset-y-0 left-0 w-64 bg-white shadow-lg transform -translate-x-full transition-transform duration-300 ease-in-out z-50">
+                <div class="p-5 flex flex-col h-full">
+                    <!-- Logo and Close Button -->
+                    <div class="flex items-center justify-between mb-4">
+                        <img src="https://www.whisperingpines.in/images/logo.png" class="h-10 w-auto">
+                        <button id="close-menu" class="text-gray-600 hover:text-red-600 focus:outline-none text-xl">
+                            ✖
+                        </button>
+                    </div>
+
+                    <!-- Navigation Links -->
+                    <nav class="mt-5 space-y-4 flex-grow">
+                        <a href="#home" class="block text-gray-700 hover:text-green-600">Home</a>
+                        <a href="#about" class="block text-gray-700 hover:text-green-600">About</a>
+                        <a href="#activities" class="block text-gray-700 hover:text-green-600">Activities</a>
+                        <a href="#gallery" class="block text-gray-700 hover:text-green-600">Gallery</a>
+                        <a href="#contact" class="block text-gray-700 hover:text-green-600">Contact</a>
+                    </nav>
+
+                    <!-- Action Buttons -->
+                    <div class="space-y-3 mt-auto">
+                        <a href="tel:+919876543210" class="block bg-blue-500 text-white text-center py-2 rounded-md flex items-center justify-center gap-2 hover:bg-blue-600">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10l1.42 1.42a9 9 0 0012.16 0L18 10m0 0l-1.42-1.42a9 9 0 00-12.16 0L3 10m3 4l1 1a5 5 0 007 0l1-1"></path>
+                            </svg>
+                            Call Now
+                        </a>
+
+                        <a href="https://wa.me/919876543210" class="block bg-green-500 text-white text-center py-2 rounded-md flex items-center justify-center gap-2 hover:bg-green-600">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10l1.42 1.42a9 9 0 0012.16 0L18 10m0 0l-1.42-1.42a9 9 0 00-12.16 0L3 10m3 4l1 1a5 5 0 007 0l1-1"></path>
+                            </svg>
+                            WhatsApp
+                        </a>
+
+                        <a href="#book-now" class="block bg-red-500 text-white text-center py-2 rounded-md flex items-center justify-center gap-2 hover:bg-red-600">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6l4 2"></path>
+                            </svg>
+                            Book Now
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- Hero Section -->
+    <section class="relative pt-16">
+        <div class="relative h-[60vh] overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b" 
+                 alt="Gallery Hero" 
+                 class="w-full h-full object-cover"
+                 loading="eager"/>
+            <div class="absolute inset-0 bg-black/50"></div>
+            <div class="absolute inset-0 flex flex-col items-center justify-center text-center">
+                <h1 class="text-5xl md:text-7xl font-bold text-white mb-4">Our Gallery</h1>
+                <p class="text-xl text-white/90 max-w-3xl mx-auto">
+                    Explore the stunning beauty of our mountain resort through our curated collection of images
+                </p>
+                <div class="flex items-center space-x-2 text-white/90 mt-4">
+                    <a href="/" class="hover:text-green-400 transition-colors">Home</a>
+                    <span>></span>
+                    <span class="text-green-400">Gallery</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!-- Gallery Categories Section with Creative Design -->
+<section class="py-16 bg-gradient-to-b from-white to-gray-50 relative overflow-hidden">
+    <!-- Decorative Elements -->
+    <div class="absolute inset-0 pointer-events-none">
+        <div class="absolute top-0 left-0 w-72 h-72 bg-green-100 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob"></div>
+        <div class="absolute top-0 right-0 w-72 h-72 bg-blue-100 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-2000"></div>
+        <div class="absolute bottom-0 left-1/2 w-72 h-72 bg-yellow-100 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-4000"></div>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-4 relative">
+        <!-- Section Header -->
+        <div class="text-center mb-16">
+            <h2 class="text-4xl font-bold mb-4 bg-gradient-to-r from-green-600 to-blue-600 bg-clip-text text-transparent">
+                Explore Our Collections
+            </h2>
+            <div class="w-24 h-1 bg-gradient-to-r from-green-500 to-blue-500 mx-auto mb-6"></div>
+            <p class="text-gray-600 text-lg max-w-2xl mx-auto">
+                Journey through our curated collections capturing the essence of mountain luxury
+            </p>
+        </div>
+
+        <!-- Creative Category Cards -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <!-- Accommodations Category -->
+            <div class="group relative h-96 overflow-hidden rounded-2xl shadow-lg transition-all duration-500 hover:shadow-2xl">
+                <img src="https://images.unsplash.com/photo-1521401830884-6c03c1c87ebb" 
+                     alt="Luxury Accommodations"
+                     class="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"/>
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent">
+                    <div class="absolute bottom-0 left-0 right-0 p-8">
+                        <div class="mb-4">
+                            <span class="inline-block bg-white/20 backdrop-blur-sm px-4 py-1 rounded-full text-white text-sm">
+                                24 Photos
+                            </span>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white mb-2">Accommodations</h3>
+                        <p class="text-white/80 mb-4">Luxurious suites and cozy mountain retreats</p>
+                        <button class="bg-white/10 backdrop-blur-sm text-white px-6 py-2 rounded-lg hover:bg-white/20 transition-all duration-300 transform group-hover:translate-y-0 translate-y-8" data-gallery-category="accommodations">
+                            View Gallery
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Gallery Popup/Modal with Carousel -->
+            <div id="galleryModal" class="fixed inset-0 z-50 hidden">
+                <!-- Backdrop -->
+                <div class="absolute inset-0 bg-black/90 backdrop-blur-sm"></div>
+                
+                <!-- Modal Content -->
+                <div class="relative h-full w-full flex items-center justify-center p-4">
+                    <!-- Close Button -->
+                    <button onclick="closeGalleryModal()" class="absolute top-4 right-4 text-white hover:text-green-400 z-50">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                        </svg>
+                    </button>
+
+                    <!-- Category Title (shows when viewing category) -->
+                    <div class="absolute top-6 left-1/2 transform -translate-x-1/2 text-white text-center z-50">
+                        <h3 id="galleryTitle" class="text-2xl font-bold mb-2">Category Title</h3>
+                        <p id="gallerySubtitle" class="text-white/80">Viewing <span id="currentIndex">1</span> of <span id="totalImages">10</span></p>
+                    </div>
+
+                    <!-- Previous Button -->
+                    <button onclick="previousImage()" class="absolute left-4 top-1/2 transform -translate-y-1/2 text-white hover:text-green-400 z-50">
+                        <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                        </svg>
+                    </button>
+
+                    <!-- Next Button -->
+                    <button onclick="nextImage()" class="absolute right-4 top-1/2 transform -translate-y-1/2 text-white hover:text-green-400 z-50">
+                        <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                        </svg>
+                    </button>
+
+                    <!-- Carousel Container -->
+                    <div class="relative w-full max-w-6xl">
+                        <!-- Image Container -->
+                        <div id="carouselContainer" class="relative aspect-[16/9] overflow-hidden rounded-lg">
+                            <!-- Images will be dynamically inserted here -->
+                        </div>
+
+                        <!-- Image Caption -->
+                        <div class="absolute bottom-6 left-1/2 transform -translate-x-1/2 text-white text-center">
+                            <h4 id="imageTitle" class="text-xl font-bold mb-2">Image Title</h4>
+                            <p id="imageDescription" class="text-white/80">Image description goes here</p>
+                        </div>
+
+                        <!-- Thumbnail Navigation -->
+                        <div class="absolute -bottom-20 left-0 right-0">
+                            <div id="thumbnailContainer" class="flex justify-center space-x-2 overflow-x-auto scrollbar-hide px-4">
+                                <!-- Thumbnails will be dynamically inserted here -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Activities Category -->
+            <div class="group relative h-96 overflow-hidden rounded-2xl shadow-lg transition-all duration-500 hover:shadow-2xl">
+                <img src="https://images.unsplash.com/photo-1522163182402-834f871fd851" 
+                     alt="Mountain Activities"
+                     class="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"/>
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent">
+                    <div class="absolute bottom-0 left-0 right-0 p-8">
+                        <div class="mb-4">
+                            <span class="inline-block bg-white/20 backdrop-blur-sm px-4 py-1 rounded-full text-white text-sm">
+                                32 Photos
+                            </span>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white mb-2">Activities</h3>
+                        <p class="text-white/80 mb-4">Adventure and excitement in the mountains</p>
+                        <button class="bg-white/10 backdrop-blur-sm text-white px-6 py-2 rounded-lg hover:bg-white/20 transition-all duration-300 transform group-hover:translate-y-0 translate-y-8">
+                            View Gallery
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Dining Category -->
+            <div class="group relative h-96 overflow-hidden rounded-2xl shadow-lg transition-all duration-500 hover:shadow-2xl">
+                <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836" 
+                     alt="Fine Dining"
+                     class="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"/>
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent">
+                    <div class="absolute bottom-0 left-0 right-0 p-8">
+                        <div class="mb-4">
+                            <span class="inline-block bg-white/20 backdrop-blur-sm px-4 py-1 rounded-full text-white text-sm">
+                                18 Photos
+                            </span>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white mb-2">Dining</h3>
+                        <p class="text-white/80 mb-4">Exquisite culinary experiences</p>
+                        <button class="bg-white/10 backdrop-blur-sm text-white px-6 py-2 rounded-lg hover:bg-white/20 transition-all duration-300 transform group-hover:translate-y-0 translate-y-8">
+                            View Gallery
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Nature Category -->
+            <div class="group relative h-96 overflow-hidden rounded-2xl shadow-lg transition-all duration-500 hover:shadow-2xl">
+                <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b" 
+                     alt="Mountain Nature"
+                     class="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"/>
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent">
+                    <div class="absolute bottom-0 left-0 right-0 p-8">
+                        <div class="mb-4">
+                            <span class="inline-block bg-white/20 backdrop-blur-sm px-4 py-1 rounded-full text-white text-sm">
+                                28 Photos
+                            </span>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white mb-2">Nature</h3>
+                        <p class="text-white/80 mb-4">Stunning mountain landscapes</p>
+                        <button class="bg-white/10 backdrop-blur-sm text-white px-6 py-2 rounded-lg hover:bg-white/20 transition-all duration-300 transform group-hover:translate-y-0 translate-y-8">
+                            View Gallery
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Main Gallery Section with Creative Layout -->
+<section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4">
+        <!-- Gallery Grid with Mixed Sizes -->
+        <div class="grid grid-cols-12 gap-4">
+            <!-- Featured Large Image -->
+            <div class="col-span-12 md:col-span-8 relative group">
+                <div class="relative overflow-hidden rounded-2xl aspect-[16/9]">
+                    <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b" 
+                         alt="Mountain Vista"
+                         class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"/>
+                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <div class="absolute bottom-6 left-6 text-white">
+                            <h4 class="text-xl font-bold">Mountain Vista</h4>
+                            <p class="text-sm opacity-80">View larger image</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Vertical Image -->
+            <div class="col-span-12 md:col-span-4 relative group">
+                <div class="relative overflow-hidden rounded-2xl aspect-[3/4]">
+                    <img src="https://images.unsplash.com/photo-1521401830884-6c03c1c87ebb" 
+                         alt="Luxury Suite"
+                         class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"/>
+                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <div class="absolute bottom-6 left-6 text-white">
+                            <h4 class="text-xl font-bold">Luxury Suite</h4>
+                            <p class="text-sm opacity-80">View larger image</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Three Square Images -->
+            <div class="col-span-12 md:col-span-4 relative group">
+                <div class="relative overflow-hidden rounded-2xl aspect-square">
+                    <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b" 
+                         alt="Wellness"
+                         class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"/>
+                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <div class="absolute bottom-6 left-6 text-white">
+                            <h4 class="text-xl font-bold">Wellness Center</h4>
+                            <p class="text-sm opacity-80">View larger image</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-span-12 md:col-span-4 relative group">
+                <div class="relative overflow-hidden rounded-2xl aspect-square">
+                    <img src="https://images.unsplash.com/photo-1522163182402-834f871fd851" 
+                         alt="Adventure"
+                         class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"/>
+                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <div class="absolute bottom-6 left-6 text-white">
+                            <h4 class="text-xl font-bold">Adventure Activities</h4>
+                            <p class="text-sm opacity-80">View larger image</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-span-12 md:col-span-4 relative group">
+                <div class="relative overflow-hidden rounded-2xl aspect-square">
+                    <img src="https://images.unsplash.com/photo-1496412705862-e0088f16f791" 
+                         alt="Dining"
+                         class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"/>
+                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <div class="absolute bottom-6 left-6 text-white">
+                            <h4 class="text-xl font-bold">Fine Dining</h4>
+                            <p class="text-sm opacity-80">View larger image</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Wide Image -->
+            <div class="col-span-12 relative group">
+                <div class="relative overflow-hidden rounded-2xl aspect-[21/9]">
+                    <img src="https://images.unsplash.com/photo-1585543805890-6051f7829f98" 
+                         alt="Panoramic View"
+                         class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"/>
+                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <div class="absolute bottom-6 left-6 text-white">
+                            <h4 class="text-xl font-bold">Panoramic Mountain View</h4>
+                            <p class="text-sm opacity-80">View larger image</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Load More Button -->
+        <div class="text-center mt-12">
+            <button class="bg-green-600 text-white px-8 py-3 rounded-lg hover:bg-green-700 transition-all duration-300 transform hover:scale-105 shadow-lg">
+                Load More Photos
+            </button>
+        </div>
+    </div>
+</section>
+
+    <!-- Virtual Tour Section -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold mb-4">Virtual Tour</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">
+                    Experience our resort virtually before your visit. Take a 360° tour of our property and facilities.
+                </p>
+            </div>
+            <div class="bg-gray-100 rounded-xl p-12 text-center">
+                <div class="max-w-xl mx-auto">
+                    <div class="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <svg class="w-10 h-10 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Start Virtual Tour</h3>
+                    <p class="text-gray-600 mb-8">
+                        Click below to begin your virtual journey through Whispering Pines Resort.
+                    </p>
+                    <button class="bg-green-600 text-white px-8 py-3 rounded-lg hover:bg-green-700 transition-all duration-300 transform hover:scale-105">
+                        Launch Virtual Tour
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Instagram Feed Section -->
+    <section class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold mb-4">Follow Us on Instagram</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">
+                    Stay updated with our latest photos and stories on Instagram
+                </p>
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <!-- Instagram Feed Items -->
+                <div class="relative group overflow-hidden rounded-xl">
+                    <img src="https://images.unsplash.com/photo-1585543805890-6051f7829f98" 
+                         alt="Instagram post" 
+                         class="w-full aspect-square object-cover transform group-hover:scale-110 transition-transform duration-500"/>
+                    <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <div class="text-white text-center">
+                            <p class="font-semibold">View Post</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Add more Instagram feed items -->
+            </div>
+            <div class="text-center mt-8">
+                <a href="#" class="inline-flex items-center space-x-2 text-green-600 hover:text-green-700">
+                    <span>Follow us @whisperingpines</span>
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white pt-20 pb-6">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+                <!-- Company Info -->
+                <div>
+                    <h3 class="text-2xl font-semibold mb-6">Whispering Pines</h3>
+                    <p class="text-gray-400 mb-6">
+                        Luxury mountain resort offering unforgettable experiences in the heart of the Himalayas.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <span class="sr-only">Facebook</span>
+                            <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <span class="sr-only">Instagram</span>
+                            <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14C.333 4.905.131 5.775.072 7.053.012 8.333 0 8.74 0 12s.015 3.667.072 4.947c.06 1.277.261 2.148.558 2.913.306.788.717 1.459 1.384 2.126.667.666 1.336 1.079 2.126 1.384.766.296 1.636.499 2.913.558C8.333 23.988 8.74 24 12 24s3.667-.015 4.947-.072c1.277-.06 2.148-.262 2.913-.558.788-.306 1.459-.718 2.126-1.384.666-.667 1.079-1.335 1.384-2.126.296-.765.499-1.636.558-2.913.06-1.28.072-1.687.072-4.947s-.015-3.667-.072-4.947c-.06-1.277-.262-2.149-.558-2.913-.306-.789-.718-1.459-1.384-2.126C21.319 1.347 20.651.935 19.86.63c-.765-.297-1.636-.499-2.913-.558C15.667.012 15.26 0 12 0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.015 3.585-.074 4.85c-.061 1.17-.256 1.805-.421 2.227-.224.562-.479.96-.897 1.382-.419.419-.824.679-1.38.896-.42.164-1.065.36-2.235.413-1.274.057-1.649.07-4.859.07-3.211 0-3.586-.015-4.859-.074-1.171-.061-1.816-.256-2.236-.421-.569-.224-.96-.479-1.379-.897-.421-.419-.69-.824-.9-1.38-.165-.42-.359-1.065-.42-2.235-.045-1.26-.061-1.649-.061-4.844 0-3.196.016-3.586.061-4.861.061-1.17.255-1.814.42-2.234.21-.57.479-.96.9-1.381.419-.419.81-.689 1.379-.898.42-.166 1.051-.361 2.221-.421 1.275-.045 1.65-.06 4.859-.06l.045.03zm0 3.678c-3.405 0-6.162 2.76-6.162 6.162 0 3.405 2.76 6.162 6.162 6.162 3.405 0 6.162-2.76 6.162-6.162 0-3.405-2.76-6.162-6.162-6.162zM12 16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm7.846-10.405c0 .795-.646 1.44-1.44 1.44-.795 0-1.44-.646-1.44-1.44 0-.794.646-1.439 1.44-1.439.793-.001 1.44.645 1.44 1.439z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <span class="sr-only">Twitter</span>
+                            <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="text-lg font-semibold mb-6">Quick Links</h4>
+                    <ul class="space-y-4">
+                        <li>
+                            <a href="#about" class="text-gray-400 hover:text-white transition-colors">About Us</a>
+                        </li>
+                        <li>
+                            <a href="#rooms" class="text-gray-400 hover:text-white transition-colors">Accommodations</a>
+                        </li>
+                        <li>
+                            <a href="#activities" class="text-gray-400 hover:text-white transition-colors">Activities</a>
+                        </li>
+                        <li>
+                            <a href="#gallery" class="text-gray-400 hover:text-white transition-colors">Gallery</a>
+                        </li>
+                        <li>
+                            <a href="#contact" class="text-gray-400 hover:text-white transition-colors">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Our Services -->
+                <div>
+                    <h4 class="text-lg font-semibold mb-6">Our Services</h4>
+                    <ul class="space-y-4">
+                        <li>
+                            <a href="#" class="text-gray-400 hover:text-white transition-colors">Luxury Accommodation</a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-gray-400 hover:text-white transition-colors">Adventure Activities</a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-gray-400 hover:text-white transition-colors">Corporate Events</a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-gray-400 hover:text-white transition-colors">Wellness Programs</a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-gray-400 hover:text-white transition-colors">Wedding Venues</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Newsletter -->
+                <div>
+                    <h4 class="text-lg font-semibold mb-6">Newsletter</h4>
+                    <p class="text-gray-400 mb-4">
+                        Subscribe to our newsletter for special offers and updates.
+                    </p>
+                    <form class="space-y-4">
+                        <div>
+                            <input type="email" 
+                                   class="w-full px-4 py-3 bg-gray-800 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500" 
+                                   placeholder="Your email address"/>
+                        </div>
+                        <button type="submit" 
+                                class="w-full bg-green-600 text-white px-4 py-3 rounded-lg hover:bg-green-700 transition-colors duration-300">
+                            Subscribe
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Contact Bar -->
+            <div class="border-t border-gray-800 pt-8 pb-12">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="flex items-center justify-center md:justify-start">
+                        <svg class="h-6 w-6 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                        </svg>
+                        <span class="text-gray-400">Kanatal, Uttarakhand, India</span>
+                    </div>
+                    <div class="flex items-center justify-center">
+                        <svg class="h-6 w-6 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+                        </svg>
+                        <span class="text-gray-400">+91 98765 43210</span>
+                    </div>
+                    <div class="flex items-center justify-center md:justify-end">
+                        <svg class="h-6 w-6 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                        </svg>
+                        <span class="text-gray-400">info@whisperingpines.com</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom Bar -->
+            <div class="border-t border-gray-800 pt-8">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <div class="text-gray-400 text-sm mb-4 md:mb-0">
+                        © 2025 Whispering Pines. All rights reserved.
+                    </div>
+                    <div class="flex space-x-6">
+                        <a href="#" class="text-gray-400 hover:text-white text-sm transition-colors">Privacy Policy</a>
+                        <a href="#" class="text-gray-400 hover:text-white text-sm transition-colors">Terms of Service</a>
+                        <a href="#" class="text-gray-400 hover:text-white text-sm transition-colors">Cookie Policy</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button id="scrollToTop" 
+            class="fixed bottom-8 right-8 bg-green-600 text-white p-3 rounded-full shadow-lg hover:bg-green-700 transition-all duration-300 opacity-0 invisible">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"/>
+        </svg>
+    </button>
+
+    <!-- Add this script at the end of your body tag -->
+    <script>
+        // Scroll to Top Button Functionality
+        const scrollToTopBtn = document.getElementById('scrollToTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                scrollToTopBtn.classList.remove('opacity-0', 'invisible');
+                scrollToTopBtn.classList.add('opacity-100', 'visible');
+            } else {
+                scrollToTopBtn.classList.add('opacity-0', 'invisible');
+                scrollToTopBtn.classList.remove('opacity-100', 'visible');
+            }
+        });
+
+        scrollToTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    </script>
+
+    <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const menuButton = document.getElementById("mobile-menu-button");
+        const mobileMenu = document.getElementById("mobile-menu");
+        const closeButton = document.getElementById("close-menu");
+
+        // Function to open the menu
+        menuButton.addEventListener("click", function () {
+            mobileMenu.classList.remove("-translate-x-full");
+            mobileMenu.classList.add("translate-x-0");
+        });
+
+        // Function to close the menu
+        closeButton.addEventListener("click", function () {
+            mobileMenu.classList.remove("translate-x-0");
+            mobileMenu.classList.add("-translate-x-full");
+        });
+
+        // Close menu when clicking outside of it
+        document.addEventListener("click", function (event) {
+            if (!mobileMenu.contains(event.target) && !menuButton.contains(event.target)) {
+                mobileMenu.classList.add("-translate-x-full");
+            }
+        });
+    });
+    </script>
+
+
+    <script>
+        // Function to toggle mobile menu
+        function toggleMobileMenu() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        }
+
+        // Scroll to Top Button Functionality
+        const scrollToTopBtn = document.getElementById('scrollToTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                scrollToTopBtn.classList.remove('opacity-0', 'invisible');
+                scrollToTopBtn.classList.add('opacity-100', 'visible');
+            } else {
+                scrollToTopBtn.classList.add('opacity-0', 'invisible');
+                scrollToTopBtn.classList.remove('opacity-100', 'visible');
+            }
+        });
+
+        scrollToTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    </script>
+
+            <!-- Add this script section to your existing scripts -->
+            <script>
+                // Gallery Data Structure
+                const galleryData = {
+                    'accommodations': {
+                        title: 'Luxury Accommodations',
+                        images: [
+                            {
+                                url: 'https://images.unsplash.com/photo-1521401830884-6c03c1c87ebb',
+                                title: 'Luxury Suite',
+                                description: 'Our premium mountain view suite'
+                            },
+                            {
+                                url: 'https://images.unsplash.com/photo-1587061949409-02df41d5e562',
+                                title: 'Deluxe Room',
+                                description: 'Spacious deluxe room with modern amenities'
+                            },
+                            // Add more images for accommodations
+                        ]
+                    },
+                    'activities': {
+                        title: 'Mountain Activities',
+                        images: [
+                            {
+                                url: 'https://images.unsplash.com/photo-1522163182402-834f871fd851',
+                                title: 'Rock Climbing',
+                                description: 'Professional guided climbing experiences'
+                            },
+                            {
+                                url: 'https://images.unsplash.com/photo-1552733407-5d5c46c3bb3b',
+                                title: 'Nature Trails',
+                                description: 'Scenic hiking trails through the mountains'
+                            },
+                            // Add more images for activities
+                        ]
+                    },
+                    // Add more categories
+                };
+
+                let currentCategory = null;
+                let currentImageIndex = 0;
+
+                // Function to open gallery modal
+                function openGalleryModal(category = null, imageIndex = 0) {
+                    const modal = document.getElementById('galleryModal');
+                    modal.classList.remove('hidden');
+                    document.body.style.overflow = 'hidden';
+
+                    if (category) {
+                        currentCategory = category;
+                        currentImageIndex = imageIndex;
+                        updateGalleryView();
+                    }
+                }
+
+                // Function to close gallery modal
+                function closeGalleryModal() {
+                    const modal = document.getElementById('galleryModal');
+                    modal.classList.add('hidden');
+                    document.body.style.overflow = 'auto';
+                }
+
+                // Function to update gallery view
+                function updateGalleryView() {
+                    const categoryData = galleryData[currentCategory];
+                    const currentImage = categoryData.images[currentImageIndex];
+
+                    // Update title and counters
+                    document.getElementById('galleryTitle').textContent = categoryData.title;
+                    document.getElementById('currentIndex').textContent = currentImageIndex + 1;
+                    document.getElementById('totalImages').textContent = categoryData.images.length;
+
+                    // Update main image
+                    const carouselContainer = document.getElementById('carouselContainer');
+                    carouselContainer.innerHTML = `
+                        <img src="${currentImage.url}" 
+                             alt="${currentImage.title}" 
+                             class="w-full h-full object-cover">
+                    `;
+
+                    // Update image details
+                    document.getElementById('imageTitle').textContent = currentImage.title;
+                    document.getElementById('imageDescription').textContent = currentImage.description;
+
+                    // Update thumbnails
+                    updateThumbnails();
+                }
+
+                // Function to update thumbnails
+                function updateThumbnails() {
+                    const thumbnailContainer = document.getElementById('thumbnailContainer');
+                    thumbnailContainer.innerHTML = '';
+
+                    galleryData[currentCategory].images.forEach((image, index) => {
+                        const thumbnail = document.createElement('div');
+                        thumbnail.className = `flex-shrink-0 w-20 h-20 rounded-lg overflow-hidden cursor-pointer ${
+                            index === currentImageIndex ? 'ring-2 ring-green-400' : ''
+                        }`;
+                        thumbnail.innerHTML = `
+                            <img src="${image.url}" 
+                                 alt="${image.title}" 
+                                 class="w-full h-full object-cover">
+                        `;
+                        thumbnail.onclick = () => {
+                            currentImageIndex = index;
+                            updateGalleryView();
+                        };
+                        thumbnailContainer.appendChild(thumbnail);
+                    });
+                }
+
+                // Navigation functions
+                function previousImage() {
+                    if (currentImageIndex > 0) {
+                        currentImageIndex--;
+                        updateGalleryView();
+                    }
+                }
+
+                function nextImage() {
+                    if (currentImageIndex < galleryData[currentCategory].images.length - 1) {
+                        currentImageIndex++;
+                        updateGalleryView();
+                    }
+                }
+
+                // Keyboard navigation
+                document.addEventListener('keydown', (e) => {
+                    if (!document.getElementById('galleryModal').classList.contains('hidden')) {
+                        if (e.key === 'ArrowLeft') previousImage();
+                        if (e.key === 'ArrowRight') nextImage();
+                        if (e.key === 'Escape') closeGalleryModal();
+                    }
+                });
+
+                // Add click handlers to gallery buttons
+                document.querySelectorAll('[data-gallery-category]').forEach(button => {
+                    button.addEventListener('click', () => {
+                        const category = button.dataset.galleryCategory;
+                        openGalleryModal(category, 0);
+                    });
+                });
+
+                // Add click handlers to individual images
+                document.querySelectorAll('[data-gallery-image]').forEach(image => {
+                    image.addEventListener('click', () => {
+                        const category = image.dataset.galleryCategory;
+                        const index = parseInt(image.dataset.galleryImage);
+                        openGalleryModal(category, index);
+                    });
+                });
+            </script>
+</body>
+</html>
