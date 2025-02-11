@@ -130,9 +130,147 @@
             </div>
         </div>
     </nav>
+    
+    <!-- Hero Section -->
+    <section class="relative pt-16">
+        <!-- Hero Background -->
+        <div class="relative h-[60vh] overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1550966871-3ed3cdb5ed0c?w=1200" 
+                 alt="Fine Dining" 
+                 class="w-full h-full object-cover"
+                 loading="eager"/>
+            <div class="absolute inset-0 bg-black/50"></div>
+            <div class="absolute inset-0 flex flex-col items-center justify-center text-center">
+                <h1 class="text-5xl md:text-7xl font-bold text-white mb-4">Dining</h1>
+                <div class="flex items-center space-x-2 text-white/90">
+                    <a href="/" class="hover:text-green-400 transition-colors">Home</a>
+                    <span>></span>
+                    <span class="text-green-400">Dining</span>
+                </div>
+            </div>
+        </div>
+    </section>
 
+    <!-- Main Content -->
+    <section class="py-16 md:py-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <!-- Content Column -->
+                <div class="space-y-8">
+                    <div class="prose max-w-none">
+                        <p class="text-gray-600 leading-relaxed mb-6">
+                            We, at Whispering Pines, believe the Irish proverb that "Laughter is brightest where food is the best". And thus, in-spite of the remote location, we strive to make sure that the quality of food and menu on offer are not compromised. In fact, since its inception, sumptuous food has always been the highlight of Whispering Pines.
+                        </p>
+                        <p class="text-gray-600 leading-relaxed">
+                            We offer our guests a choice of delectable Indian, Chinese, Mughali and Continental cuisine. Our Chef can surprise you with some really mouthwatering Garhwali cuisines too. Most of the food is sourced locally and cooked hygienically. The food is served in the dining area and there is a separate quick bite menu for room service as well.
+                        </p>
+                    </div>
 
+                    <!-- Cuisine Types -->
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                        <div class="text-center">
+                            <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"></path>
+                                </svg>
+                            </div>
+                            <h3 class="font-semibold">Indian</h3>
+                        </div>
+                        <div class="text-center">
+                            <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                                </svg>
+                            </div>
+                            <h3 class="font-semibold">Chinese</h3>
+                        </div>
+                        <div class="text-center">
+                            <div class="w-16 h-16 bg-amber-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <svg class="w-8 h-8 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                </svg>
+                            </div>
+                            <h3 class="font-semibold">Mughlai</h3>
+                        </div>
+                        <div class="text-center">
+                            <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <svg class="w-8 h-8 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 15.546c-.523 0-1.046.151-1.5.454a2.704 2.704 0 01-3 0 2.704 2.704 0 00-3 0 2.704 2.704 0 01-3 0 2.704 2.704 0 00-3 0 2.704 2.704 0 01-3 0 2.701 2.701 0 00-1.5-.454M9 6v2m3-2v2m3-2v2M9 3h.01M12 3h.01M15 3h.01M21 21v-7a2 2 0 00-2-2H5a2 2 0 00-2 2v7h18zm-3-9v-2a2 2 0 00-2-2H8a2 2 0 00-2 2v2h12z"></path>
+                                </svg>
+                            </div>
+                            <h3 class="font-semibold">Continental</h3>
+                        </div>
+                    </div>
+                </div>
 
+                <!-- Image Gallery -->
+                <div class="space-y-6">
+                    <div class="relative h-96 rounded-xl overflow-hidden shadow-xl">
+                        <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800" 
+                             alt="Fine Dining" 
+                             class="w-full h-full object-cover"/>
+                    </div>
+                    <div class="grid grid-cols-3 gap-4">
+                        <div class="relative h-32 rounded-lg overflow-hidden shadow-lg">
+                            <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=300" 
+                                 alt="Food" 
+                                 class="w-full h-full object-cover"/>
+                        </div>
+                        <div class="relative h-32 rounded-lg overflow-hidden shadow-lg">
+                            <img src="https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=300" 
+                                 alt="Food" 
+                                 class="w-full h-full object-cover"/>
+                        </div>
+                        <div class="relative h-32 rounded-lg overflow-hidden shadow-lg">
+                            <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=300" 
+                                 alt="Food" 
+                                 class="w-full h-full object-cover"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="py-16 bg-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Local Ingredients -->
+                <div class="bg-white p-8 rounded-xl shadow-lg">
+                    <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4">Local Ingredients</h3>
+                    <p class="text-gray-600">We source the freshest ingredients from local farmers and markets to ensure authentic flavors.</p>
+                </div>
+
+                <!-- Room Service -->
+                <div class="bg-white p-8 rounded-xl shadow-lg">
+                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4">Room Service</h3>
+                    <p class="text-gray-600">Enjoy our specially curated quick bite menu from the comfort of your room.</p>
+                </div>
+
+                <!-- Special Requirements -->
+                <div class="bg-white p-8 rounded-xl shadow-lg">
+                    <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4">Special Requirements</h3>
+                    <p class="text-gray-600">We cater to special dietary requirements and preferences. Just let us know in advance.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- Footer -->
     <footer class="bg-gray-900 text-white pt-20 pb-6">

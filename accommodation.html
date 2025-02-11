@@ -3,41 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Whispering Pines - Luxury Mountain Resort</title>
+    <title>Whispering Pines - Accommodation</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        @keyframes float {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-20px); }
-            100% { transform: translateY(0px); }
-        }
-        .animate-float {
-            animation: float 6s ease-in-out infinite;
-        }
-        @keyframes blob {
-            0% { transform: translate(0px, 0px) scale(1); }
-            33% { transform: translate(30px, -50px) scale(1.1); }
-            66% { transform: translate(-20px, 20px) scale(0.9); }
-            100% { transform: translate(0px, 0px) scale(1); }
-        }
-        .animate-blob {
-            animation: blob 7s infinite;
-        }
-        .animation-delay-2000 {
-            animation-delay: 2s;
-        }
-        .animation-delay-4000 {
-            animation-delay: 4s;
-        }
-        .scrollbar-hide::-webkit-scrollbar {
-            display: none;
-        }
-        .scrollbar-hide {
-            -ms-overflow-style: none;
-            scrollbar-width: none;
-        }
-    </style>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
 <body class="bg-gray-50">
     <!-- Navigation Bar -->
@@ -131,8 +100,334 @@
         </div>
     </nav>
 
+    <!-- Hero Section -->
+    <div class="relative pt-16">
+        <div class="h-[400px] w-full relative">
+            <img src="https://images.unsplash.com/photo-1618773928121-c32242e63f39" 
+                 alt="Accommodation Hero" 
+                 class="w-full h-full object-cover brightness-75"
+                 loading="lazy">
+            <div class="absolute inset-0 bg-black/30"></div>
+            <div class="absolute inset-0 flex items-center justify-center">
+                <div class="text-center text-white">
+                    <h1 class="text-5xl font-bold mb-4">Accommodation</h1>
+                    <div class="flex items-center justify-center space-x-2 text-sm">
+                        <a href="/" class="hover:text-green-400">Home</a>
+                        <span>›</span>
+                        <span class="text-green-400">Accommodation</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Introduction Section -->
+    <section class="py-16 px-4">
+        <div class="max-w-4xl mx-auto text-center">
+            <p class="text-gray-600 mb-8 leading-relaxed">
+                Whether you're chasing the angels or fleeing from demons, come to the mountains. You would agree with us that there can't be a greater bliss than to wake up to fresh peaks, dew drops on the leaves in the lush green fields! And there will be nothing better to make your nights spent serenading mother nature.
+            </p>
+            <p class="text-gray-600 mb-8 leading-relaxed">
+                Morning mist, chirping birds, dew drops on the grass, majestic view of the Himalayan ranges and ethereal peace! That's what you will experience when you get up every morning at Whispering Pines Himalayan Retreat.
+            </p>
+            <p class="text-gray-600 leading-relaxed">
+                Come home to India's most loved mountain getaway. Surrounded by pine trees, apple orchards and Greater Himalayan ranges in the background, Whispering Pines is nothing short of a Hobbit World in itself with surprises waiting for you at every corner.
+            </p>
+        </div>
+    </section>
+
+    <!-- Alpine Tents Section -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-4">Alpine Tents Section</h2>
+            <div class="w-24 h-1 bg-green-500 mx-auto mb-12"></div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <img src="https://images.unsplash.com/photo-1587061949409-02df41d5e562" 
+                         alt="Alpine Swiss Tent" 
+                         class="rounded-lg shadow-xl hover:scale-105 transition-transform duration-300"
+                         loading="lazy">
+                </div>
+                <div>
+                    <h3 class="text-2xl font-bold mb-4 text-gray-800">Alpine Swiss Tent</h3>
+                    <p class="text-gray-600 mb-6">
+                        17' x 17' size Swiss Tents with metal frame made of high quality weather proof canvas. 12' x 5' Attached Porch/Sun with well laid floor and 8' center walls. Tent interiors include wall to wall carpet, attached bath with vestibule, hot water bucket, attached porch tent, fresh towels making proper beds. The double premium hunter is best business including a shoe box in these tents. A bottle of mineral water is provided with compliments from the resort per guest, per night's stay.
+                    </p>
+                    <div class="flex space-x-6">
+                        <div class="flex items-center">
+                            <i class="fas fa-bed text-green-500 mr-2"></i>
+                            <span class="text-gray-600">Double Bed</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-bath text-green-500 mr-2"></i>
+                            <span class="text-gray-600">Attached Bath</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-wifi text-green-500 mr-2"></i>
+                            <span class="text-gray-600">Wi-Fi</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Adventure Camping Section -->
+    <!-- Adventure Camping Section -->
+    <section class="py-16 bg-gradient-to-b from-gray-50 to-white relative overflow-hidden">
+        <!-- Decorative Elements -->
+        <div class="absolute top-0 left-0 w-64 h-64 bg-green-100 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob"></div>
+        <div class="absolute top-0 right-0 w-64 h-64 bg-blue-100 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-2000"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 relative">
+            <h2 class="text-4xl font-bold text-center mb-4">Adventure Camping Section</h2>
+            <div class="w-24 h-1 bg-gradient-to-r from-green-500 to-blue-500 mx-auto mb-12"></div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <!-- Main Content -->
+                <div class="lg:col-span-2">
+                    <div class="relative group">
+                        <img src="https://images.unsplash.com/photo-1504851149312-7a075b496cc7" 
+                             alt="Adventure Camping" 
+                             class="w-full h-[500px] object-cover rounded-xl shadow-xl group-hover:scale-105 transition-transform duration-500"
+                             loading="lazy">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <div class="absolute bottom-6 left-6 text-white">
+                                <h3 class="text-2xl font-bold mb-2">Dome and Alpine Tents</h3>
+                                <p class="text-sm">Experience nature up close</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Features -->
+                <div class="bg-white/80 backdrop-blur-sm rounded-xl p-8 shadow-xl">
+                    <h3 class="text-2xl font-bold mb-6 text-gray-800">Experience Pure Adventure</h3>
+                    <p class="text-gray-600 mb-8 leading-relaxed">
+                        This category of accommodation provides for the closest interaction with the outdoors and has been created keeping high on adventure-around travelers. Made of imported nylon material, Alpine and Dome tents provide for ground bedding with sleeping bags and kaylmiyan or mattresses with quilts.
+                    </p>
+                    
+                    <div class="space-y-4">
+                        <div class="flex items-center p-4 bg-green-50 rounded-lg">
+                            <i class="fas fa-campground text-green-600 text-xl mr-4"></i>
+                            <div>
+                                <h4 class="font-semibold">Premium Camping Equipment</h4>
+                                <p class="text-sm text-gray-600">High-quality tents and gear</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center p-4 bg-blue-50 rounded-lg">
+                            <i class="fas fa-mountain text-blue-600 text-xl mr-4"></i>
+                            <div>
+                                <h4 class="font-semibold">Panoramic Mountain Views</h4>
+                                <p class="text-sm text-gray-600">Wake up to nature's beauty</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center p-4 bg-amber-50 rounded-lg">
+                            <i class="fas fa-fire text-amber-600 text-xl mr-4"></i>
+                            <div>
+                                <h4 class="font-semibold">Bonfire Experience</h4>
+                                <p class="text-sm text-gray-600">Evening gatherings under stars</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
 
+    <!-- Alpine Mountain Cottage Section -->
+    <section class="py-16 bg-white relative overflow-hidden">
+        <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b')] bg-fixed bg-cover opacity-5"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 relative">
+            <h2 class="text-4xl font-bold text-center mb-4">Alpine Mountain Cottage</h2>
+            <div class="w-24 h-1 bg-gradient-to-r from-green-500 to-blue-500 mx-auto mb-12"></div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
+                <div class="space-y-8">
+                    <div class="bg-white/80 backdrop-blur-sm rounded-xl p-8 shadow-xl">
+                        <h3 class="text-2xl font-bold mb-4 text-gray-800">Luxurious Mountain Living</h3>
+                        <p class="text-gray-600 leading-relaxed">
+                            Valley facing independent cottage rooms with a small outside sit out. These rooms not only gel well with the outdoors but also add to the overall ambiance with their retro Himalayan interiors.
+                        </p>
+                    </div>
+
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="bg-white/80 backdrop-blur-sm p-4 rounded-xl shadow-lg">
+                            <i class="fas fa-bed text-green-600 text-2xl mb-2"></i>
+                            <h4 class="font-semibold mb-1">Comfortable Beds</h4>
+                            <p class="text-sm text-gray-600">Premium mattresses & linens</p>
+                        </div>
+                        <div class="bg-white/80 backdrop-blur-sm p-4 rounded-xl shadow-lg">
+                            <i class="fas fa-bath text-blue-600 text-2xl mb-2"></i>
+                            <h4 class="font-semibold mb-1">Modern Bathroom</h4>
+                            <p class="text-sm text-gray-600">Hot water & amenities</p>
+                        </div>
+                        <div class="bg-white/80 backdrop-blur-sm p-4 rounded-xl shadow-lg">
+                            <i class="fas fa-mountain text-purple-600 text-2xl mb-2"></i>
+                            <h4 class="font-semibold mb-1">Valley View</h4>
+                            <p class="text-sm text-gray-600">Panoramic landscapes</p>
+                        </div>
+                        <div class="bg-white/80 backdrop-blur-sm p-4 rounded-xl shadow-lg">
+                            <i class="fas fa-coffee text-amber-600 text-2xl mb-2"></i>
+                            <h4 class="font-semibold mb-1">Private Balcony</h4>
+                            <p class="text-sm text-gray-600">Morning tea with a view</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="space-y-4">
+                        <img src="https://images.unsplash.com/photo-1469394576569-858815b13427" 
+                             alt="Cottage Interior" 
+                             class="w-full h-48 object-cover rounded-xl shadow-lg hover:scale-105 transition-transform duration-300"
+                             loading="lazy">
+                        <img src="https://images.unsplash.com/photo-1542928658-22251e208ac1" 
+                             alt="Cottage View" 
+                             class="w-full h-64 object-cover rounded-xl shadow-lg hover:scale-105 transition-transform duration-300"
+                             loading="lazy">
+                    </div>
+                    <div class="space-y-4 pt-8">
+                        <img src="https://images.unsplash.com/photo-1586375300773-8384e3e4916f" 
+                             alt="Cottage Bathroom" 
+                             class="w-full h-64 object-cover rounded-xl shadow-lg hover:scale-105 transition-transform duration-300"
+                             loading="lazy">
+                        <img src="https://images.unsplash.com/photo-1551524164-687a55dd1126" 
+                             alt="Cottage Exterior" 
+                             class="w-full h-48 object-cover rounded-xl shadow-lg hover:scale-105 transition-transform duration-300"
+                             loading="lazy">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Additional Features -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16">
+                <!-- Room Amenities -->
+                <div class="bg-white/80 backdrop-blur-sm rounded-xl p-6 shadow-xl transform hover:-translate-y-2 transition-all duration-300">
+                    <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-home text-green-600 text-xl"></i>
+                    </div>
+                    <h4 class="text-xl font-bold mb-4">Room Amenities</h4>
+                    <ul class="space-y-3 text-gray-600">
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-2"></i>
+                            Premium bedding with extra quilts
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-2"></i>
+                            Private balcony with seating
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-2"></i>
+                            Electric kettle with tea/coffee
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-2"></i>
+                            Room heater (seasonal)
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Bathroom Features -->
+                <div class="bg-white/80 backdrop-blur-sm rounded-xl p-6 shadow-xl transform hover:-translate-y-2 transition-all duration-300">
+                    <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-shower text-blue-600 text-xl"></i>
+                    </div>
+                    <h4 class="text-xl font-bold mb-4">Bathroom Features</h4>
+                    <ul class="space-y-3 text-gray-600">
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-2"></i>
+                            24/7 hot water supply
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-2"></i>
+                            Premium toiletries
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-2"></i>
+                            Hair dryer on request
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-2"></i>
+                            Fresh towels daily
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Additional Services -->
+                <div class="bg-white/80 backdrop-blur-sm rounded-xl p-6 shadow-xl transform hover:-translate-y-2 transition-all duration-300">
+                    <div class="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-concierge-bell text-purple-600 text-xl"></i>
+                    </div>
+                    <h4 class="text-xl font-bold mb-4">Additional Services</h4>
+                    <ul class="space-y-3 text-gray-600">
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-2"></i>
+                            Daily housekeeping
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-2"></i>
+                            Room service
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-2"></i>
+                            Laundry service
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-2"></i>
+                            Wake-up calls
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Booking CTA -->
+            <div class="mt-16 text-center">
+                <a href="#book-now" class="inline-flex items-center px-8 py-3 bg-green-600 text-white font-semibold rounded-lg hover:bg-green-700 transition-colors duration-300 transform hover:scale-105">
+                    <i class="fas fa-calendar-check mr-2"></i>
+                    Book Your Mountain Retreat
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Facilities Section -->
+    <section class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-4">Our Facilities</h2>
+            <div class="w-24 h-1 bg-green-500 mx-auto mb-12"></div>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-concierge-bell text-2xl text-green-600"></i>
+                    </div>
+                    <h3 class="font-semibold">Front Office</h3>
+                </div>
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-broom text-2xl text-green-600"></i>
+                    </div>
+                    <h3 class="font-semibold">Housekeeping</h3>
+                </div>
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-book text-2xl text-green-600"></i>
+                    </div>
+                    <h3 class="font-semibold">Mini Library</h3>
+                </div>
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-user-md text-2xl text-green-600"></i>
+                    </div>
+                    <h3 class="font-semibold">Doctor on Call</h3>
+                </div>
+                <!-- Add more facility items -->
+            </div>
+        </div>
+    </section>
 
     <!-- Footer -->
     <footer class="bg-gray-900 text-white pt-20 pb-6">
